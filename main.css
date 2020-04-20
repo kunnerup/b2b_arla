@@ -1,0 +1,373 @@
+/* ---------- ROOT ---------- */
+:root {
+  --light_background: #DFE7E6;
+  --darkgreen: #137D4E;
+  --textgreen: #006C3A;
+  --bottomgreen: #44916F;
+  --lightgrey: #C3CBCE;
+  --greytext: #334856;
+}
+
+/*ARLA FONTE*/
+  @font-face {
+    font-family: "Arla";
+    src: url("../fonts/arlaifbd.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/arlaifbd.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */
+      url("../fonts/arlaifbd.otf") format("opentype"),
+      /* Open Type Font */
+      url("../fonts/arlaifbd.svg") format("svg"),
+      /* Legacy iOS */
+      url("../fonts/arlaifbd.ttf") format("truetype"),
+      /* Safari, Android, iOS */
+      url("../fonts/arlaifbd.woff") format("woff"),
+      /* Modern Browsers */
+      url("../fonts/arlaifbd.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Arla Normal Font Face */
+  @font-face {
+    font-family: "Arla";
+    src: url("../fonts/arlaifrg.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/arlaifrg.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */
+      url("../fonts/arlaifrg.otf") format("opentype"),
+      /* Open Type Font */
+      url("../fonts/arlaifrg.svg") format("svg"),
+      /* Legacy iOS */
+      url("../fonts/arlaifrg.ttf") format("truetype"),
+      /* Safari, Android, iOS */
+      url("../fonts/arlaifrg.woff") format("woff"),
+      /* Modern Browsers */
+      url("../fonts/arlaifrg.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Arla Light Font Face */
+  @font-face {
+    font-family: "Arla";
+    src: url("../fonts/arlaiflt.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/arlaiflt.eot?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */
+      url("../fonts/arlaiflt.otf") format("opentype"),
+      /* Open Type Font */
+      url("../fonts/arlaiflt.svg") format("svg"),
+      /* Legacy iOS */
+      url("../fonts/arlaiflt.ttf") format("truetype"),
+      /* Safari, Android, iOS */
+      url("../fonts/arlaiflt.woff") format("woff"),
+      /* Modern Browsers */
+      url("../fonts/arlaiflt.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: 300;
+    font-style: normal;
+  }
+
+/* ---------- OVERALL ---------- */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--textgreen);
+  background-color: var(--light_background);
+font-family: 'Arla', Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.tabbarclear {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+}
+
+
+/* ---------- TOPBAREN MED SIDETITEL ---------- */
+.topbar {
+  background-color: var(--light_background);
+  color: var(--textgreen);
+  padding: 13.5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.topbar a.left {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+    text-decoration: none;
+    height: 20px;
+    width: 20px;
+}
+
+header h2{
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1.1em;
+}
+
+
+/* ---------- TABBAR I BuNDEN ---------- */
+.tabbar {
+  background-color: white;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.tab_left, .tab_right {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 40%;
+}
+
+.tab_left{
+  left: 0;
+}
+
+.tab_right {
+  right: 0;
+}
+
+/* LINKS I TABBAREN */
+.tabbar a {
+  color: var(--greytext);
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tabbar img {
+  height: 35px;
+  object-fit: scale-down;
+  padding-bottom: 5px;
+}
+
+/*CHALLENGE BUTTON*/
+.challenge {
+background-color: #EBEBEC;
+border-radius: 50%;
+box-shadow: 0px 2px 5px grey;
+position: absolute;
+width: 65px;
+height: 65px;
+left: 50%;
+transform: translate(-50%, 0);
+bottom: 22px;
+}
+
+
+/* ---------- STYLING AF DE ENKELTE SIDER ---------- */
+.page {
+  display: none;
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+  padding: 55px 0;
+}
+
+
+/*HOME*/
+#home{
+  background-color: white;
+}
+
+#home .topbar {
+   background-color: white;
+}
+
+#home form {
+  display: flex;
+  flex-direction: column;
+}
+
+#home form input {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--darkgreen);
+}
+
+#home form button {
+  width: auto;
+  margin: auto;
+  padding: 10px 20px;
+  background-color: var(--bottomgreen);
+  border: none;
+  color: white;
+}
+
+.image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin:auto;
+}
+
+
+/* ---------- ANIMATIONER ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- LOADIN SCREEN ---------- */
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  overflow: hidden;
+  background: var(--loader-background-color);
+  text-align: center;
+}
+
+.spinner {
+  border: 5px solid var(--light-grey);
+  border-radius: 50%;
+  border-top: 5px solid var(--light-green);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+
+/* GRID OPSÆTNINGEN */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 10px;
+}
+
+.grid-container>article {
+  text-align: center;
+  padding: 10px;
+}
+
+.grid-container>article img {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.grid-container>article h3 {
+  font-weight: 200;
+}
+
+/* ---------- FIREBASE LOGIN STYLING---------- */
+#firebaseui-auth-container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.firebaseui-container {
+  font-family: var(--font-family);
+  font: 16px var(--font-family);
+}
+
+.firebaseui-title {
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.firebaseui-button {
+  max-width: 35%;
+}
+
+.mdl-button--raised.mdl-button--colored,
+.mdl-button--raised.mdl-button--colored:active,
+.mdl-button--raised.mdl-button--colored:hover {
+  background: var(--green);
+  color: #fff;
+  border-radius: 0;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-label::after {
+  background-color: var(--green);
+}
+
+.mdl-button--primary.mdl-button--primary {
+  color: var(--green);
+}
+
+
+/*Responsive*/
+/*---------------TABLET-----------------*/
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+
+/*-----------DESKTOP-------------------*/
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}

@@ -1,0 +1,32 @@
+==Release notes_Arla InterFace==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Date of creation: 2014-03-21
+
+Changes since previous release:
+- This is the first release.
+
+Basic information
+1 Basic family name: Arla InterFace Condensed
+2 TrueType Version record: 1.000
+3 Regional Package: Latin
+4 Supported scripts: Latin
+5 Weights/Styles: Bold
+6 Usage: Text and Display
+
+Technology
+1 File formats: The files have been delivered in the OpenType format, for use in all major Operating Systems, and also in Embedded OpenType format and Web Open Font Format for all major browsers.
+2 Embedding settings: Everything is allowed (installable mode).
+3 Hinting information: No hinting.
+4 The Embedded OpenType(EOT) font-format works in Microsoft Internet Explorer by including ".eot?#iefix;" to the @font-face CSS rule.
+
+  eg:
+
+  @font-face {
+	  font-family: Arla InterFace Condensed W;
+	  src: url(css/type/ArlaIFCondensed_W_Bd.eot?#iefix;) format("embedded-opentype");
+	  }
+  body { font-family: Arla InterFace W Condensed, Georgia; }

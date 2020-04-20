@@ -1,0 +1,32 @@
+==Release notes_Arla InterFace==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Date of creation: 2014-03-17
+
+Changes since previous release:
+- On Mac: Thin, Light and Black are now in the same font family as Regular, Italic and Bold.
+
+Basic information
+1 Basic family name: Arla InterFace
+2 TrueType Version record: 1.001
+3 Regional Package: Latin
+4 Supported scripts: Latin
+5 Weights/Styles: Thin, Light, Regular, Bold, Black, Italic
+6 Usage: Text and Display
+
+Technology
+1 File formats: The files have been delivered in the TrueType-based OpenType format, for use in all major Operating Systems, and also in Embedded OpenType format and Web Open Font Format for all major browsers.
+2 Embedding settings: Everything is allowed (installable mode).
+3 Hinting information: Fonts have been hinted in the Y direction only, suitable for ClearType rasterization modes.
+4 The Embedded OpenType(EOT) font-format works in Microsoft Internet Explorer by including ".eot?#iefix;" to the @font-face CSS rule.
+
+  eg:
+
+  @font-face {
+	  font-family: Arla InterFace W;
+	  src: url(css/type/ArlaIF_W_Rg.eot?#iefix;) format("embedded-opentype");
+	  }
+  body { font-family: Arla InterFace W, Georgia; }
