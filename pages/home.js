@@ -15,7 +15,50 @@ export default class HomePage {
       <section id="profile">
       </section>
 
-<article id"keydata"></article>
+<article id="calltoaction">
+  <a href="#enterData"><h2 id="greenb">Indtast data</h2></a>
+  <a href="#dashboard"><h2 id="whiteb">Dashboard</h2></a>
+</article>
+
+<article id="keydata">
+<h3>Sidste års tal</h3>
+
+<div>
+  <div>
+    <h4>370,86</h4>
+    <p>Samlet CO2-aftryk i tons</p>
+    <p>DOWN</p>
+  </div>
+  <div id="borders">
+    <h4>7830,04</h4>
+    <p>Liter mælk produceret</p>
+    <p>UP</p>
+  </div>
+  <div>
+    <h4>5469,21</h4>
+    <p>Kg foder benytter</p>
+    <p>DOWN</p>
+  </div>
+  <div id="fulllength">
+      <h4>303</h4>
+      <p>Gennemsnitligt liter mælk pr. ko i liter</p>
+      <p>UP</p>
+  </div>
+</div>
+</article>
+
+<article id="bestresults">
+<h2>Personlige rekorder</h2>
+</article>
+
+<article id="badgets">
+<h2>Bedrifter</h2>
+<div></div>
+</article>
+
+<article id="activechallenges">
+<h2>Aktive målsætninger & udfordringer</h2>
+</article>
 
       <form id="updateProfile">
         <label for="name">Navn</label>

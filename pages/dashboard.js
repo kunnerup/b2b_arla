@@ -20,6 +20,7 @@ dashboard() {
       <section id="dashboard" class="page">
         <header class="topbar">
           <h2>Arla gården +</h2>
+          <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
         <h3>Herd - Number of Cows</h3>
         <canvas id="cows"></canvas>

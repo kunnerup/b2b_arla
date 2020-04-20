@@ -23,6 +23,7 @@ export default class ChallengePage {
       <section id="challenge" class="page">
         <header class="topbar">
           <h2>Arla gården +</h2>
+          <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
         <h3>Herd - Number of Cows</h3>
         <canvas id="cowsCompare"></canvas>
@@ -48,7 +49,7 @@ export default class ChallengePage {
             pointHoverBackgroundColor: "#55bae7",
             pointHoverBorderColor: "#55bae7",
           },
-          // secobd dataset - second user: Ep7o7EToQtZzdKnEDy2ahirFHc43
+          // second dataset - second user: Ep7o7EToQtZzdKnEDy2ahirFHc43
           {
             label: 'User: Ep7o7EToQtZzdKnEDy2ahirFHc43',
             data: dataCompare.numberOfCows,

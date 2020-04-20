@@ -1,36 +1,31 @@
 class SustainabilityDataService {
-  constructor() {
-    this.dataRef = _db.collection("sustainabilityData");
+  constructor(uid) {
+    this.dataRef = _db.collection("users");
   }
 
-  // data from firebase
-  // There are two ways to retrieve data stored in Cloud Firestore. Either of these methods can be used with documents, collections of documents, or the results of queries:
-  // - Call a method to get the data.
-  // - Set a listener to receive data-change events.
-  // In this case we're using get() to get data once without listning for changes.
+  // DATA FRA FIREBASE VIA .GET
   async getDataByUid(uid) {
     let snapshotData = await this.dataRef.where("uid", "==", uid).orderBy("year").get();
     let sustainabilityData = [];
     snapshotData.forEach(doc => {
-      let data = doc.data(); // save the data in a variable
-      data.id = doc.id; // add the id to the data variable
-      sustainabilityData.push(data); // push the data to the array
+      let data = doc.data(); // putter dataen ind i en variabel kaldet data
+      data.id = doc.id; // Sætter ID'et til variablen også
+      sustainabilityData.push(data); // Sætter dataen ind i arrayet
     });
-    // do what ever you want with the data array 🎉
     return sustainabilityData;
   }
 
-  // prepares all the data for the charts
+
   prepareData(sustainabilityData) {
     let years = [];
     let cows = [];
     let milkProduction = [];
     let carbonFootprint = [];
-    for (const dataObject of sustainabilityData) { // looping through all data and pushing to arrays
+    for (const dataObject of sustainabilityData) {
       years.push(dataObject.year);
       cows.push(dataObject.cows);
-      milkProduction.push(dataObject.herdMilkProduction);
-      carbonFootprint.push(dataObject.carbonFootprintWholeFarm);
+      milkProduction.push(dataObject.milk);
+      carbonFootprint.push(dataObject.footprint);
     }
     return {
       years,
