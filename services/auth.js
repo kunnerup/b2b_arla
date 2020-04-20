@@ -34,7 +34,8 @@ class AuthService {
         const uiConfig = {
             credentialHelper: firebaseui.auth.CredentialHelper.NONE,
             signInOptions: [
-                firebase.auth.EmailAuthProvider.PROVIDER_ID
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID
             ],
             signInSuccessUrl: '#home'
         };
@@ -72,6 +73,12 @@ class AuthService {
         document.querySelector('#mail').value = this.authUser.email;
         document.querySelector('#imagePreview').src = this.authUser.img || "";
         document.querySelector('#farm').value = this.authUser.farm || "";
+
+        document.querySelector('#profile').innerHTML = `
+<img src="${this.authUser.img}" alt="Profilbillede">
+        <h2>${this.authUser.displayName}</h2>
+        <p>${this.authUser.farm}</p>
+        `;
     }
 
     updateAuthUser(name, img, farm) {

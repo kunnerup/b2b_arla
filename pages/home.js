@@ -1,11 +1,11 @@
 import authService from "../services/auth.js";
 export default class HomePage {
   constructor() {
-    this.template();
+    this.home();
     this.authService = authService;
   }
 
-  template(name, img, farm) {
+  home(name, img, farm) {
     document.getElementById('content').innerHTML += /*html*/ `
       <section id="home" class="page">
       <header class="topbar">
@@ -27,6 +27,10 @@ export default class HomePage {
         <img id="imagePreview" class="image-preview">
         <button type="button" name="button" onclick="updateUser()">Gem ændringer</button>
       </form>
+
+      <section id="profile">
+
+      </section>
 
 <div class="tabbarclear"></div>
     </section>

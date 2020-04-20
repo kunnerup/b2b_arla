@@ -231,6 +231,17 @@ bottom: 22px;
   margin:auto;
 }
 
+#profile {
+width: 100%;
+}
+
+#profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin:auto;
+}
 
 /* ---------- ANIMATIONER ---------- */
 /* fade in */

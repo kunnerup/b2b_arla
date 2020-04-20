@@ -3,7 +3,7 @@ import authService from "../services/auth.js";
 
 export default class ChallengePage {
   constructor() {
-    this.template();
+    this.challenge();
   }
 
   async init() {
@@ -20,11 +20,11 @@ export default class ChallengePage {
     this.appendMilkProduction(data, dataCompare);
   }
 
-  template() {
+  challenge() {
     document.getElementById('content').innerHTML += /*html*/ `
       <section id="challenge" class="page">
         <header class="topbar">
-          <h2>Charts Two datasets</h2>
+          <h2>Arla gården +</h2>
         </header>
         <h3>Herd - Number of Cows</h3>
         <canvas id="cowsCompare"></canvas>
