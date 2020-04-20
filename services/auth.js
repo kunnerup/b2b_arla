@@ -75,7 +75,7 @@ class AuthService {
         document.querySelector('#farm').value = this.authUser.farm || "";
 
         document.querySelector('#profile').innerHTML = `
-<img src="${this.authUser.img}" alt="Profilbillede">
+<img id="pb" src="${this.authUser.img}" alt="Profilbillede">
         <h2>${this.authUser.displayName}</h2>
         <p>${this.authUser.farm}</p>
         `;

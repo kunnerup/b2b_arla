@@ -32,10 +32,10 @@ dashboard() {
     // generate chart
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
-      type: 'line',
+      type: 'bar',
       data: {
         datasets: [{
-          data: data.numberOfCows,
+          data: [51, 12, 34, 53, 56],
           label: 'Number of Cows',
           fill: false,
           borderColor: "#e755ba",
@@ -45,17 +45,11 @@ dashboard() {
           pointHoverBackgroundColor: "#55bae7",
           pointHoverBorderColor: "#55bae7",
         }],
-        labels: data.years
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              min: (Math.min(...data.numberOfCows) - 5),
-              max: (Math.max(...data.numberOfCows) + 1)
-            }
-          }]
-        }
+        labels: [2015,
+          2016,
+          2017,
+          2018,
+          2019]
       }
     });
   }

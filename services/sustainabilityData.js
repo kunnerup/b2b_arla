@@ -23,18 +23,18 @@ class SustainabilityDataService {
   // prepares all the data for the charts
   prepareData(sustainabilityData) {
     let years = [];
-    let numberOfCows = [];
+    let cows = [];
     let milkProduction = [];
     let carbonFootprint = [];
     for (const dataObject of sustainabilityData) { // looping through all data and pushing to arrays
       years.push(dataObject.year);
-      numberOfCows.push(dataObject.herdYearCows);
+      cows.push(dataObject.cows);
       milkProduction.push(dataObject.herdMilkProduction);
       carbonFootprint.push(dataObject.carbonFootprintWholeFarm);
     }
     return {
       years,
-      numberOfCows,
+      cows,
       milkProduction,
       carbonFootprint
     };
@@ -44,7 +44,7 @@ class SustainabilityDataService {
     let firebaseData = await this.getDataByUid(uid); // get the data from Firebase
     let preparedData = this.prepareData(firebaseData); // Prepare all the data. Returning an object with arrays: years, numberOfCows, milkProduction & carbonFootprint
     console.log(preparedData);
-    return preparedData; // returning the data back to the "caller", in this case the chart pages 
+    return preparedData; // returning the data back to the "caller", in this case the chart pages
   }
 }
 

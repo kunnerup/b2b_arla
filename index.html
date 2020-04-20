@@ -8,6 +8,7 @@
   <meta name="description" content="Arla Gården +">
   <meta name="author" content="Anders Kunnerup, Jonas Kløjgård & Nikolaj Egeskov">
   <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"/>
   <link rel="stylesheet" href="main.css">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 </head>
@@ -18,17 +19,17 @@
   <!-- tabbar navigation -->
   <nav id="tabbar" class="tabbar hide">
 <div class="tab_left">
-    <a href="#home"><img src="images/navigation/home_grey.svg" alt="home icon">hjem</a>
-    <a href="#dashboard"><img src="images/navigation/dash_grey.svg" alt="dashboard icon">dashboard</a>
+    <a href="#home"><div class="home"></div>hjem</a>
+    <a href="#dashboard"><div class="dash"></div>dashboard</a>
   </div>
 
-    <a class="challenge" href="#challenge"><img src="images/navigation/challenge_color.svg" alt="challenge icon">mål</a>
+    <a class="challenge" href="#challenge"><div class="challengeicon"></div>mål</a>
     <div class="tab_right">
-    <a href="#enterData"><img src="images/navigation/data_grey.png" alt="enter data icon">indtast</a>
-    <a href="#enterData"><img src="images/navigation/setup_grey.svg" alt="setup icon">indstillinger</a>
+    <a href="#enterData"><div class="enter"></div>indtast</a>
+    <a href="#enterData"><div class="settings"></div>indstillinger</a>
 </div>
   </nav>
-  
+
   <section id="content"></section>
 
   <!-- Loding firebase libraries: firebase, auth, firestore & firebase ui -->

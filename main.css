@@ -163,10 +163,42 @@ header h2{
   flex-direction: column;
   justify-content: center;
 }
-.tabbar img {
+
+.tabbar a.active .home {
+background-image: url(images/navigation/home_color.svg);
+}
+.tabbar a.active .dash {
+background-image: url(images/navigation/dash_color.svg);
+}
+.tabbar a.active .challengeicon {
+background-image: url(images/navigation/challenge_color.svg);
+}
+.tabbar a.active .enter {
+background-image: url(images/navigation/data_color.svg);
+}
+.tabbar a.active .settings {
+background-image: url(images/navigation/setup_color.svg);
+}
+
+.home, .dash, .challengeicon, .enter, .settings{
   height: 35px;
-  object-fit: scale-down;
-  padding-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.home {
+  background-image: url(images/navigation/home_grey.svg);
+}
+.dash {
+  background-image: url(images/navigation/dash_grey.svg);
+}
+.challengeicon {
+  background-image: url(images/navigation/challenge_grey.svg);
+}
+.enter {
+  background-image: url(images/navigation/data_grey.png);
+}
+.settings {
+  background-image: url(images/navigation/setup_grey.svg);
 }
 
 /*CHALLENGE BUTTON*/
@@ -235,12 +267,24 @@ bottom: 22px;
 width: 100%;
 }
 
-#profile img {
+#pb {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
   margin:auto;
+}
+
+.setupprofile {
+  position: absolute;
+  width: 25px;
+  right: 10px;
+}
+
+#keydata {
+  width: 90%;
+  height: 100px;
+  background-color: var(--light_background)
 }
 
 /* ---------- ANIMATIONER ---------- */

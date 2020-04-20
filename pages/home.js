@@ -12,7 +12,12 @@ export default class HomePage {
         <h2>Arlagården +</h2>
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
-      <form>
+      <section id="profile">
+      </section>
+
+<article id"keydata"></article>
+
+      <form id="updateProfile">
         <label for="name">Navn</label>
         <input type="text" id="name" placeholder="Indtast dit navn" disabled>
 
@@ -27,10 +32,6 @@ export default class HomePage {
         <img id="imagePreview" class="image-preview">
         <button type="button" name="button" onclick="updateUser()">Gem ændringer</button>
       </form>
-
-      <section id="profile">
-
-      </section>
 
 <div class="tabbarclear"></div>
     </section>
