@@ -367,6 +367,61 @@ div#fulllength {
 border-right: var(--lightgrey) 2px solid;
 }
 
+#bestresults {
+  padding: 10px;
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+#bestresults div {
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: space-between;
+min-width: 120px;
+padding: 10px;
+background-color: #CFFCDC;
+border: 3px solid var(--darkgreen);
+border-radius: 4px;
+margin: 10px;
+}
+
+#bestresults h3 {
+  font-size: 0.9em;
+  padding-bottom: 20px;
+}
+
+#bestresults h2 {
+  font-size: 1.3em;
+}
+
+.alignleft {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 50px;
+  font-size: 1.1em;
+}
+
+#badgets {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+#badgets div {
+  min-width: 140px;
+  max-width: 140px;
+  font-size: 0.6em;
+}
+
+#badgets div img {
+  width: 50%;
+}
+
 
 /*DASHBOARD*/
 

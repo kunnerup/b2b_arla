@@ -47,17 +47,69 @@ export default class HomePage {
 </div>
 </article>
 
-<article id="bestresults">
-<h2>Personlige rekorder</h2>
+<article>
+<h2 class="alignleft">Personlige rekorder</h2>
+<div id="bestresults">
+  <div>
+<h3>Mest mælk produceret</h3>
+<h2>25.920 kg</h2>
+<p>2020</p>
+  </div>
+  <div>
+  <h3>Laveste samlede CO2-aftryk</h3>
+  <h2>5.320 t</h2>
+  <p>2018</p>
+  </div>
+  <div>
+  <h3>Mindst strøm benyttet</h3>
+  <h2>102 kWh</h2>
+  <p>2019</p>
+  </div>
+  <div>
+  <h3>Mindst diesel benyttet</h3>
+  <h2>8.290 l</h2>
+  <p>2019</p>
+  </div>
+  <div>
+  <h3>Største andel selvforsynende foder</h3>
+  <h2>79%</h2>
+  <p>2015</p>
+  </div>
+</div>
 </article>
 
-<article id="badgets">
-<h2>Bedrifter</h2>
-<div></div>
+<article >
+<h2 class="alignleft">Bedrifter</h2>
+<div id="badgets">
+
+<div>
+<img src="images/badgets/plane.svg" alt="badgets icon">
+<h3>Mindst CO2-aftyk svarende til flyrejse</h3>
+</div>
+
+<div>
+<img src="images/badgets/feed.svg" alt="badgets icon">
+<h3>Fohøj procenten af selvforsynedne foder</h3>
+</div>
+
+<div>
+<img src="images/badgets/milk.svg" alt="badgets icon">
+<h3>Øg mængden af solgt mælk</h3></div>
+
+<div>
+<img src="images/badgets/scout.svg" alt="badgets icon">
+<h3>Din går ligger i top-3 over mindste strømforbrug</h3></div>
+
+<div>
+<img src="images/badgets/milkdrop.svg" alt="badgets icon">
+<h3>Sænk CO2-aftryk pr. kg mælk</h3></div>
+</div>
+
+</div>
 </article>
 
 <article id="activechallenges">
-<h2>Aktive målsætninger & udfordringer</h2>
+<h2 class="alignleft">Aktive målsætninger & udfordringer</h2>
 </article>
 
       <form id="updateProfile">
@@ -94,7 +146,7 @@ export default class HomePage {
   previewImage(file, previewId) {
     if (file) {
       let reader = new FileReader();
-      reader.onload = function (event) {
+      reader.onload = function(event) {
         document.querySelector('#' + previewId).setAttribute('src', event.target.result);
       };
       reader.readAsDataURL(file);
