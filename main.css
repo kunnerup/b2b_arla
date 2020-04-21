@@ -430,7 +430,33 @@ margin: 10px;
 
 
 /*DATAINDSAMLING*/
+#enterData header{
+  background-color: white;
+}
+#enterData {
+  background-color: white;
+}
 
+#inputdata{
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  border: solid white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-top: 5%;
+  width: 90%;
+  margin-left: 5%;
+
+}
+#inputdata input{
+  width: 80%;
+  text-align: center;
+  margin-left: 4%;
+  border: var(--lightgrey) 2px solid;
+
+}
 
 /*SETUP*/
 

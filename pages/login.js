@@ -4,7 +4,7 @@ export default class LoginPage {
   }
 
   template() {
-    document.getElementById('content').innerHTML += /*html*/ `
+    document.getElementById('content').innerHTML +=  `
       <section id="login" class="page">
         <header class="topbar">
           <h2>Login</h2>
