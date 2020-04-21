@@ -464,7 +464,19 @@ animation: fadeIn 0.4s;
 #enterData {
   background-color: white;
 }
-
+#inputter{
+  background-color: var(--light_background);
+  padding-bottom: 5%;
+  padding-top: 5%;
+  min-height: 100%;
+  margin-top: 5%;
+  margin-bottom:
+}
+#inputdata h4{
+  margin-left: 5%;
+  text-align: left;
+  font-size: 25px;
+}
 #inputdata{
   display: flex;
   flex-direction: column;
@@ -475,23 +487,73 @@ animation: fadeIn 0.4s;
   margin-top: 5%;
   width: 90%;
   margin-left: 5%;
+  border-radius: 5px;
+
+
+
 
 }
-#inputdata input{
-  width: 80%;
+.buttongem {
+  background-color: var(--lightgrey); /* Green */
+  border-radius: 10px;
+  color: white;
+  padding: 20px 40px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  cursor: pointer;
+  margin-top: 5%;
+}
+#inputdata label {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 5%;
+}
+
+#inputdata input{
+
+  width: 80%;
+  height: 50px;
+  text-align:left;
   margin-left: 4%;
-  border: var(--lightgrey) 2px solid;
+  border: var(--lightgrey) 1px solid;
+  border-radius: 10px;
+  font-size: 20px;
+
+}
+#inputdata placeholder {
+
 }
 
 #cowQuest, #feedQuest, #useQuest, #milkQuest {
   display: none;
 }
-#cowQuest.show, #feedQuest.show, #useQuest.show, #milkQuest.show {
-  display:block;
+#cowQuest.show {display:flex;
+flex-direction: column;
+animation: fadeIn 1s;}
+
+#feedQuest {
+  display: none;
+}
+#feedQuest.show {display:flex;
+flex-direction: column;
 animation: fadeIn 1s;
 }
+#milkQuest {
+  display: none;
+}
+#milkQuest.show {display:flex;
+flex-direction: column;
+animation: fadeIn 1s;}
 
+#useQuest {
+  display: none;
+}
+#useQuest.show {display:flex;
+flex-direction: column;
+animation: fadeIn 1s;}
 
 /*SETUP*/
 
