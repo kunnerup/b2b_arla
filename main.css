@@ -464,11 +464,18 @@ animation: fadeIn 0.4s;
 #enterData {
   background-color: var(--light_background);
 }
+
+#enterData h3 {
+  background-color: white;
+  height: 50px;
+  padding-top: 14px;
+  margin-top: -10px;
+}
+
 #inputter{
   background-color: var(--light_background);
   padding-bottom: 5%;
   padding-top: 5%;
-  min-height: 100%;
   margin-top: 5%;
   margin-bottom:
 }
@@ -489,12 +496,9 @@ animation: fadeIn 0.4s;
   margin-left: 5%;
   border-radius: 5px;
 
-
-
-
 }
 .buttongem {
-  background-color: var(--lightgrey); /* Green */
+  background-color: white;
   border-radius: 10px;
   color: white;
   padding: 20px 40px;
@@ -502,9 +506,9 @@ animation: fadeIn 0.4s;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-
   cursor: pointer;
   margin-top: 5%;
+  color: var(--textgreen);
 }
 #inputdata label {
   text-align: center;
