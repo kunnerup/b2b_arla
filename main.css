@@ -367,6 +367,19 @@ div#fulllength {
 border-right: var(--lightgrey) 2px solid;
 }
 
+
+/*DASHBOARD*/
+
+
+/*CHALLENGE*/
+
+
+/*DATAINDSAMLING*/
+
+
+/*SETUP*/
+
+
 /* ---------- ANIMATIONER ---------- */
 /* fade in */
 @keyframes fadeIn {
@@ -477,5 +490,5 @@ border-right: var(--lightgrey) 2px solid;
 
 /*-----------DESKTOP-------------------*/
 @media (min-width: 992px) {
-  
+
 }

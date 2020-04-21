@@ -8,15 +8,14 @@ export default class DashboardPage {
   }
 
   async init() {
-    // let = authService.authUser.uid;
     let uid = "j7WsepsaogO7mvb2S35LEfdQLmq1"; // using a fixed uid - want to make sure there's data matching an uid in the database
-    let data = await sustainabilityDataService.getPreparedDataByUid(uid); // getting prepared data from the service
-    // call append functions with the dataset: data
+    let data = await sustainabilityDataService.getPreparedDataByUid(uid);
+    // STARTER APPEND FUNKTIONERNE - TILFØJ ALLE DER SKAL APPENDES
     this.appendCowsChart(data);
   }
 
 dashboard() {
-    document.getElementById('content').innerHTML += /*html*/ `
+    document.getElementById('content').innerHTML += `
       <section id="dashboard" class="page">
         <header class="topbar">
           <h2>Arla gården +</h2>
@@ -28,15 +27,16 @@ dashboard() {
     `;
   }
 
-  //appending the chart
+
+  //APPEND ANTAL KØER
   appendCowsChart(data) {
-    // generate chart
+    let uid = "6ycxECeFQLXnMjoXVvWLJMHP6Rm2";
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
       type: 'bar',
       data: {
         datasets: [{
-          data: [51, 12, 34, 53, 56],
+          data: [51,21],
           label: 'Number of Cows',
           fill: false,
           borderColor: "#e755ba",
