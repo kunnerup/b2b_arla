@@ -14,7 +14,7 @@ export default class DataPage {
       <h3>Data indsamling</h3>
     </section>
     <form id="inputdata">
-    <h4>køer</h4>
+    <h4>Køer</h4>
       <label for="koeer">Hvor mange køer har du?</label>
       <input type="text" id="name" placeholder="Indtast din data her">
 
@@ -22,19 +22,30 @@ export default class DataPage {
 
       </form>
       <form id="inputdata">
-      <h4>foder</h4>
-        <label for="koeer">Hvor mange køer har du?</label>
+      <h4>Foder</h4>
+        <label for="koeer">Antal kg foder benyttet i år?</label>
         <input type="text" id="name" placeholder="Indtast din data her">
 
+        <label for="koeer">Andel foder der er selvforsynende?</label>
+        <input type="text" id="name" placeholder="Indtast din data her">
+
+</form>
+
+<form id="inputdata">
+<h4>Mælk</h4>
+  <label for="koeer">Hvor mange kg mælk har du produceret i år?</label>
+  <input type="text" id="name" placeholder="Indtast din data her">
+
+  </form>
 
 
-        </form>
         <form id="inputdata">
-        <h4>foder</h4>
-          <label for="koeer">Hvor mange køer har du?</label>
+        <h4>Forbrug</h4>
+          <label for="koeer">Antal liter diesel anvendt i år?</label>
           <input type="text" id="name" placeholder="Indtast din data her">
 
-
+          <label for="koeer">Antal kWh strøm anvendt i år?</label>
+          <input type="text" id="name" placeholder="Indtast din data her">
 
           </form>
     `;
