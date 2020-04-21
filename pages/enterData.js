@@ -8,21 +8,22 @@ export default class DataPage {
     <section id="enterData" class="page">
       <header class="topbar">
         <h2>Arla gården +</h2>
-
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
       <h3>Data indsamling</h3>
-    </section>
+
     <form id="inputdata">
-    <h4>Køer</h4>
+    <h4 id="cowKnap" onclick="cowData()">Køer ▼</h4>
+    <div id="cowQuest">
       <label for="koeer">Hvor mange køer har du?</label>
       <input type="text" id="name" placeholder="Indtast din data her">
+      </div>
 
 
 
       </form>
       <form id="inputdata">
-      <h4>Foder</h4>
+      <h4>Foder ▼</h4>
         <label for="koeer">Antal kg foder benyttet i år?</label>
         <input type="text" id="name" placeholder="Indtast din data her">
 
@@ -32,7 +33,7 @@ export default class DataPage {
 </form>
 
 <form id="inputdata">
-<h4>Mælk</h4>
+<h4>Mælk ▼</h4>
   <label for="koeer">Hvor mange kg mælk har du produceret i år?</label>
   <input type="text" id="name" placeholder="Indtast din data her">
 
@@ -40,7 +41,7 @@ export default class DataPage {
 
 
         <form id="inputdata">
-        <h4>Forbrug</h4>
+        <h4>Forbrug ▼</h4>
           <label for="koeer">Antal liter diesel anvendt i år?</label>
           <input type="text" id="name" placeholder="Indtast din data her">
 
@@ -48,6 +49,7 @@ export default class DataPage {
           <input type="text" id="name" placeholder="Indtast din data her">
 
           </form>
+          </section>
     `;
   }
 }

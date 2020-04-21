@@ -28,3 +28,19 @@ window.ready = () => {
 window.logout = () => homePage.logout();
 window.updateUser = () => homePage.updateUser();
 window.previewImage = (file, previewId) => homePage.previewImage(file, previewId);
+
+window.cowData = () => {
+  document.getElementById("cowQuest").classList.toggle("show")
+}
+
+window.feedData = () => {
+  document.getElementById("feedQuest").classList.toggle("show")
+}
+
+window.milkData = () => {
+  document.getElementById("milkQuest").classList.toggle("show")
+}
+
+window.useData = () => {
+  document.getElementById("useQuest").classList.toggle("show")
+}

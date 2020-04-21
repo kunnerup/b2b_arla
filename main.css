@@ -440,7 +440,6 @@ margin: 10px;
 #inputdata{
   display: flex;
   flex-direction: column;
-
   background-color: white;
   border: solid white;
   padding-top: 5%;
@@ -455,8 +454,13 @@ margin: 10px;
   text-align: center;
   margin-left: 4%;
   border: var(--lightgrey) 2px solid;
-
 }
+
+#cowQuest {
+  display: none;
+}
+#cowQuest.show {display:block;}
+
 
 /*SETUP*/
 
