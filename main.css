@@ -196,7 +196,7 @@ background-image: url(images/navigation/dash_color.svg);
 background-image: url(images/navigation/challenge_color.svg);
 }
 .tabbar a.active .enter {
-background-image: url(images/navigation/data_color.svg);
+background-image: url(images/navigation/data_color.png);
 }
 .tabbar a.active .settings {
 background-image: url(images/navigation/setup_color.svg);
@@ -206,6 +206,7 @@ background-image: url(images/navigation/setup_color.svg);
   height: 35px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 .home {
   background-image: url(images/navigation/home_grey.svg);
@@ -388,7 +389,7 @@ border-right: var(--lightgrey) 2px solid;
   }
 }
 
-/* ---------- LOADIN SCREEN ---------- */
+/* ---------- LOADING SCREEN ---------- */
 #loader {
   position: fixed;
   left: 0px;
@@ -423,29 +424,6 @@ border-right: var(--lightgrey) 2px solid;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
-}
-
-
-/* GRID OPSÆTNINGEN */
-.grid-container {
-  display: grid;
-  grid-template-columns: 100%;
-  padding: 10px;
-}
-
-.grid-container>article {
-  text-align: center;
-  padding: 10px;
-}
-
-.grid-container>article img {
-  max-width: 300px;
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-.grid-container>article h3 {
-  font-weight: 200;
 }
 
 /* ---------- FIREBASE LOGIN STYLING---------- */
@@ -493,15 +471,11 @@ border-right: var(--lightgrey) 2px solid;
 /*Responsive*/
 /*---------------TABLET-----------------*/
 @media (min-width: 600px) {
-  .grid-container {
-    grid-template-columns: 50% 50%;
-  }
+
 }
 
 
 /*-----------DESKTOP-------------------*/
 @media (min-width: 992px) {
-  .grid-container {
-    grid-template-columns: 33.33% 33.33% 33.33%;
-  }
+  
 }

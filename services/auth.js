@@ -3,6 +3,7 @@ import loaderService from "./loader.js";
 
 class AuthService {
     constructor() {
+      //Henter UI fra Firebase og samtidig "users"-collection som er den skabte collection i firebase
         this.ui = new firebaseui.auth.AuthUI(firebase.auth());
         this.userRef = _db.collection("users");
         this.authUser;
@@ -10,27 +11,29 @@ class AuthService {
     }
 
     init() {
-        // Listen on authentication state change
+        // Ser om der er ændringer i login-godkendelsen
         firebase.auth().onAuthStateChanged(user => {
-            if (user) { // if user exists and is authenticated
+            if (user) { // white brugeren er korrekt
                 this.userAuthenticated(user);
-            } else { // if user is not logged in
+            } else { // whis brugeren ikke er korrekt
                 this.userNotAuthenticated();
             }
         });
     }
 
+//Hvis brugeren findes og logges korrekt ind
     userAuthenticated(user) {
         spaService.hideTabbar(false);
         this.initAuthUserRef();
         loaderService.show(false);
     }
 
+//Hvis brugeren ikke logger korrekt ind
     userNotAuthenticated() {
         spaService.hideTabbar(true);
         spaService.navigateTo("login");
 
-        // Firebase UI configuration
+        // FIREBASE UI (GOOGLE OG MAIL SÆTTES OP HER)
         const uiConfig = {
             credentialHelper: firebaseui.auth.CredentialHelper.NONE,
             signInOptions: [
@@ -47,7 +50,7 @@ class AuthService {
         let authUser = firebase.auth().currentUser;
         this.authUserRef = _db.collection("users").doc(authUser.uid);
 
-        // init user data
+        // Kører brugerdata
         this.authUserRef.onSnapshot({
             includeMetadataChanges: true
         }, userData => {
@@ -55,11 +58,12 @@ class AuthService {
                 let user = {
                     ...authUser,
                     ...userData.data()
-                }; //concating two objects: authUser object and userData objec from the db
+                };
                 this.authUser = user;
                 this.appendAuthUser();
                 loaderService.show(false);
-                ready(); // this functions is defined in main.js and called when the user is authenticated and the app is ready to run
+                // ready kører i main og starter når brugeren er logget korrekt ind
+                ready();
             }
         });
     }
@@ -74,6 +78,7 @@ class AuthService {
         document.querySelector('#imagePreview').src = this.authUser.img || "";
         document.querySelector('#farm').value = this.authUser.farm || "";
 
+//Skiver brugerdataen til profilsiden
         document.querySelector('#profile').innerHTML = `
 <img id="pb" src="${this.authUser.img}" alt="Profilbillede">
         <h2>${this.authUser.displayName}</h2>
@@ -81,17 +86,18 @@ class AuthService {
         `;
     }
 
+//Opdater brugeren starter her
     updateAuthUser(name, img, farm) {
         loaderService.show(true);
 
         let user = firebase.auth().currentUser;
 
-        // update auth user
+        // Opdater "authentificated user" i Firebase
         user.updateProfile({
             displayName: name
         });
 
-        // update database user
+        // Opdater data i databasen i firebase
         this.authUserRef.set({
             img: img,
             farm: farm

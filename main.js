@@ -5,7 +5,7 @@ import DashboardPage from "./pages/dashboard.js";
 import DataPage from "./pages/enterData.js";
 import ChallengePage from "./pages/challenge.js";
 
-// import at services
+// import af services
 import spaService from "./services/spa.js";
 import authService from "./services/auth.js";
 

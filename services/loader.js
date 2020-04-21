@@ -1,10 +1,10 @@
 class LoaderService {
   constructor() {
-    this.template();
+    this.spinner();
   }
 
-  template() {
-    document.querySelector('#content').innerHTML += /*html*/ `
+  spinner() {
+    document.querySelector('#content').innerHTML +=`
       <div id="loader">
         <div class="spinner"></div>
       </div>
