@@ -462,7 +462,7 @@ animation: fadeIn 0.4s;
   background-color: white;
 }
 #enterData {
-  background-color: white;
+  background-color: var(--light_background);
 }
 #inputter{
   background-color: var(--light_background);
