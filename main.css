@@ -456,10 +456,13 @@ margin: 10px;
   border: var(--lightgrey) 2px solid;
 }
 
-#cowQuest {
+#cowQuest, #feedQuest, #useQuest, #milkQuest {
   display: none;
 }
-#cowQuest.show {display:block;}
+#cowQuest.show, #feedQuest.show, #useQuest.show, #milkQuest.show {
+  display:block;
+animation: fadeIn 1s;
+}
 
 
 /*SETUP*/
