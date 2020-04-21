@@ -11,7 +11,7 @@ export default class DataPage {
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
       <h3>Data indsamling</h3>
-      </section>
+
 <section id="inputter">
     <form id="inputdata">
     <h4 id="cowKnap" onclick="cowData()">Køer ▼</h4>
@@ -55,6 +55,7 @@ export default class DataPage {
 </div>
           </form>
           <button class="buttongem">Gem</button>
+          </section>
           </section>
 
     `;
