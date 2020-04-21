@@ -1,3 +1,4 @@
+import sustainabilityDataService from "../services/sustainabilityData.js";
 import authService from "../services/auth.js";
 export default class HomePage {
   constructor() {

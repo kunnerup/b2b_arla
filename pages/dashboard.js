@@ -29,7 +29,7 @@ dashboard() {
 
   //APPEND ANTAL KØER
   appendCowsChart(data) {
-    // generate chart
+    // CREATE CHART
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
       type: 'line',
@@ -51,7 +51,7 @@ dashboard() {
         scales: {
           yAxes: [{
             ticks: {
-              min: (Math.min(...data.numberOfCows) - 5),
+              min: (Math.min(...data.numberOfCows) - 3),
               max: (Math.max(...data.numberOfCows) + 1)
             }
           }]

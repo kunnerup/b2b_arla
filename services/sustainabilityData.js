@@ -21,9 +21,9 @@ class SustainabilityDataService {
     let numberOfCows = [];
     let milkProduction = [];
     let carbonFootprint = [];
-    for (const dataObject of sustainabilityData) { 
+    for (const dataObject of sustainabilityData) {
       years.push(dataObject.year);
-      numberOfCows.push(dataObject.herdYearCows);
+      numberOfCows.push(dataObject.numberOfCows);
       milkProduction.push(dataObject.herdMilkProduction);
       carbonFootprint.push(dataObject.carbonFootprintWholeFarm);
     }
