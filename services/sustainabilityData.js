@@ -1,6 +1,6 @@
 class SustainabilityDataService {
-  constructor(uid) {
-    this.dataRef = _db.collection("users");
+  constructor() {
+    this.dataRef = _db.collection("sustainabilityData");
   }
 
   // DATA FRA FIREBASE VIA .GET
@@ -18,18 +18,18 @@ class SustainabilityDataService {
 
   prepareData(sustainabilityData) {
     let years = [];
-    let cows = [];
+    let numberOfCows = [];
     let milkProduction = [];
     let carbonFootprint = [];
-    for (const dataObject of sustainabilityData) {
+    for (const dataObject of sustainabilityData) { 
       years.push(dataObject.year);
-      cows.push(dataObject.cows);
-      milkProduction.push(dataObject.milk);
-      carbonFootprint.push(dataObject.footprint);
+      numberOfCows.push(dataObject.herdYearCows);
+      milkProduction.push(dataObject.herdMilkProduction);
+      carbonFootprint.push(dataObject.carbonFootprintWholeFarm);
     }
     return {
       years,
-      cows,
+      numberOfCows,
       milkProduction,
       carbonFootprint
     };

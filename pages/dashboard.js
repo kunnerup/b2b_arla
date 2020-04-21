@@ -1,7 +1,7 @@
 import sustainabilityDataService from "../services/sustainabilityData.js";
 import authService from "../services/auth.js";
 
-export default class DashboardPage {
+export default class DashboardPage{
   constructor() {
     this.dashboard();
 
@@ -27,16 +27,15 @@ dashboard() {
     `;
   }
 
-
   //APPEND ANTAL KØER
   appendCowsChart(data) {
-    let uid = "6ycxECeFQLXnMjoXVvWLJMHP6Rm2";
+    // generate chart
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
-      type: 'bar',
+      type: 'line',
       data: {
         datasets: [{
-          data: [51,21],
+          data: data.numberOfCows,
           label: 'Number of Cows',
           fill: false,
           borderColor: "#e755ba",
@@ -46,12 +45,17 @@ dashboard() {
           pointHoverBackgroundColor: "#55bae7",
           pointHoverBorderColor: "#55bae7",
         }],
-        labels: [2015,
-          2016,
-          2017,
-          2018,
-          2019]
+        labels: data.years
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: (Math.min(...data.numberOfCows) - 5),
+              max: (Math.max(...data.numberOfCows) + 1)
+            }
+          }]
+        }
       }
     });
-  }
-}
+  }}

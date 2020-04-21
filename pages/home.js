@@ -12,6 +12,26 @@ export default class HomePage {
         <h2>Arlagården +</h2>
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
+      <img class="smalledit" src="images/navigation/setup_grey.svg" alt="setup icon" onclick="openSetup()">
+
+      <div id="updateProfile">
+            <form>
+              <label for="name">Navn</label>
+              <input type="text" id="name" placeholder="Indtast dit navn" disabled>
+
+              <label for="mail">Mail</label>
+              <input type="email" id="mail" placeholder="Indtast din email" disabled>
+
+              <label for="farm">Navnet på din gård</label>
+              <input type="farm" id="farm" placeholder="Tast din gårds navn">
+
+              <label for="img">Profil billede</label>
+              <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
+              <img id="imagePreview" class="image-preview">
+              <button type="button" name="button" onclick="updateUser()">Gem ændringer</button>
+            </form>
+      </div>
+
       <section id="profile">
       </section>
 
@@ -111,22 +131,6 @@ export default class HomePage {
 <article id="activechallenges">
 <h2 class="alignleft">Aktive målsætninger & udfordringer</h2>
 </article>
-
-      <form id="updateProfile">
-        <label for="name">Navn</label>
-        <input type="text" id="name" placeholder="Indtast dit navn" disabled>
-
-        <label for="mail">Mail</label>
-        <input type="email" id="mail" placeholder="Indtast din email" disabled>
-
-        <label for="farm">Navnet på din gård</label>
-        <input type="farm" id="farm" placeholder="Tast din gårds navn">
-
-        <label for="img">Profil billede</label>
-        <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
-        <img id="imagePreview" class="image-preview">
-        <button type="button" name="button" onclick="updateUser()">Gem ændringer</button>
-      </form>
 
 <div class="tabbarclear"></div>
     </section>

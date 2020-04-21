@@ -44,3 +44,7 @@ window.milkData = () => {
 window.useData = () => {
   document.getElementById("useQuest").classList.toggle("show")
 }
+
+window.openSetup = () => {
+  document.getElementById("updateProfile").classList.toggle("show")
+}

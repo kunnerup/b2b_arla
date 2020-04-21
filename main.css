@@ -256,9 +256,24 @@ bottom: 22px;
    background-color: white;
 }
 
+.smalledit{
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  z-index: 1000;
+  padding-top: 20px;
+}
+
 #home form {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  width: 100%;
+  background-color: var(--greytext);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 6px;
 }
 
 #home form input {
@@ -380,6 +395,7 @@ flex-direction: column;
 align-content: center;
 justify-content: space-between;
 min-width: 120px;
+max-width: 120px;
 padding: 10px;
 background-color: #CFFCDC;
 border: 3px solid var(--darkgreen);
@@ -412,6 +428,11 @@ margin: 10px;
   overflow-x: scroll;
 }
 
+#badgets::-webkit-scrollbar, #bestresults::-webkit-scrollbar {
+  display: none;
+}
+
+
 #badgets div {
   min-width: 140px;
   max-width: 140px;
@@ -422,6 +443,13 @@ margin: 10px;
   width: 50%;
 }
 
+#updateProfile {
+  display: none;
+}
+#updateProfile.show{
+  display:block;
+animation: fadeIn 0.4s;
+}
 
 /*DASHBOARD*/
 
