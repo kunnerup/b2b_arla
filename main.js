@@ -27,6 +27,7 @@ window.ready = () => {
 
 window.logout = () => homePage.logout();
 window.updateUser = () => homePage.updateUser();
+window.updateData = () => dataPage.updateData();
 window.previewImage = (file, previewId) => homePage.previewImage(file, previewId);
 
 window.cowData = () => {

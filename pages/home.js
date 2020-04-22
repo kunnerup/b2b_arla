@@ -144,8 +144,14 @@ export default class HomePage {
     let name = document.querySelector('#name').value;
     let img = document.querySelector('#imagePreview').src;
     let farm = document.querySelector('#farm').value;
+      let cow = document.querySelector('#cowInput').value;
+      let feed = document.querySelector('#feedInput').value;
+      let feedself = document.querySelector('#feedSelfInput').value;
+      let milk = document.querySelector('#milkInput').value;
+      let diesel = document.querySelector('#dieselInput').value;
+      let power = document.querySelector('#powerInput').value;
 
-    this.authService.updateAuthUser(name, img, farm);
+    this.authService.updateAuthUser(name, img, farm, cow, feed, feedself, milk, diesel, power);
   }
 
   previewImage(file, previewId) {

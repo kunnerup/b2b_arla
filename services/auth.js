@@ -77,6 +77,12 @@ class AuthService {
         document.querySelector('#mail').value = this.authUser.email;
         document.querySelector('#imagePreview').src = this.authUser.img || "";
         document.querySelector('#farm').value = this.authUser.farm || "";
+  document.querySelector('#cowInput').value = this.authUser.cow || "";
+       document.querySelector('#feedInput').value  = this.authUser.feed || "";
+         document.querySelector('#feedSelfInput').value  = this.authUser.feedself || "";
+      document.querySelector('#milkInput').value  = this.authUser.milk || "";
+      document.querySelector('#dieselInput').value  = this.authUser.diesel || "";
+    document.querySelector('#powerInput').value = this.authUser.power || "";
 
 //Skiver brugerdataen til profilsiden
         document.querySelector('#profile').innerHTML = `
@@ -87,7 +93,7 @@ class AuthService {
     }
 
 //Opdater brugeren starter her
-    updateAuthUser(name, img, farm) {
+    updateAuthUser(name, img, farm, cow, feed, feedself, milk, diesel, power) {
         loaderService.show(true);
 
         let user = firebase.auth().currentUser;
@@ -97,10 +103,18 @@ class AuthService {
             displayName: name
         });
 
+
+        
         // Opdater data i databasen i firebase
         this.authUserRef.set({
             img: img,
-            farm: farm
+            farm: farm,
+            cow: cow,
+            feed: feed,
+            feedself: feedself,
+            milk: milk,
+            diesel: diesel,
+            power: power
         }, {
             merge: true
         }).then(() => {
