@@ -35,6 +35,10 @@ class SpaService {
     }
   }
 
+  navigateTo(pageId) {
+   window.location.href = `#${pageId}`;
+ }
+
   // Øverst er "home" angivet som default, og det bestemmes her at den skal åbne denne.
   pageChange() {
     let page = this.defaultPage;

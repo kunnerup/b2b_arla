@@ -23,11 +23,14 @@ authService.init();
 window.ready = () => {
     dashboardPage.init();
     challengePage.init();
+    homePage.cowPercent ();
+      homePage.milkPercent ();
+        homePage.feedPercent ();
+          homePage.usePercent ();
 }
 
 window.logout = () => homePage.logout();
 window.updateUser = () => homePage.updateUser();
-window.updateData = () => dataPage.updateData();
 window.previewImage = (file, previewId) => homePage.previewImage(file, previewId);
 
 window.cowData = () => {

@@ -16,10 +16,10 @@ export default class DataPage {
       <h3>Data indsamling</h3>
 
 <section id="inputter">
-    <form id="inputdata"><div id="headandarrow"
-    onclick="cowData();">
-    <h4 id="cowKnap" >Køer</h4>
-    <img src="images/navigation/arrowinput.svg" id="myimage" >
+    <form id="inputdata">
+    <div id="headandarrow" onclick="cowData();">
+    <h4 id="cowKnap">▼ Køer</h4>
+    <div class="cowPercent"></div>
     </div>
     <div id="cowQuest">
       <label for="koeer">Hvor mange køer har du?</label>
@@ -30,7 +30,10 @@ export default class DataPage {
 
       </form>
       <form id="inputdata">
-      <h4 id="feedKnap" onclick="feedData()">Foder ▼</h4>
+      <div id="headandarrow" onclick="feedData()">
+      <h4 id="feedKnap">▼ Foder</h4>
+      <div class="feedPercent"></div>
+      </div>
       <div id="feedQuest">
         <label for="koeer">Antal kg foder benyttet i år?</label>
         <input type="number" id="feedInput" placeholder="Indtast din data her">
@@ -42,7 +45,10 @@ export default class DataPage {
 </form>
 
 <form id="inputdata">
-<h4 id="milkKnap" onclick="milkData()">Mælk ▼</h4>
+  <div id="headandarrow" onclick="milkData()">
+<h4 id="milkKnap">▼ Mælk</h4>
+<div class="milkPercent"></div>
+</div>
 <div id="milkQuest">
   <label for="koeer">Hvor mange kg mælk har du produceret i år?</label>
   <input type="number" id="milkInput" placeholder="Indtast din data her">
@@ -51,7 +57,10 @@ export default class DataPage {
 
 
         <form id="inputdata">
-      <h4 id="useKnap" onclick="useData()">Forbrug ▼</h4>
+        <div id="headandarrow" onclick="useData()">
+      <h4 id="useKnap">▼ Forbrug</h4>
+      <div class="usePercent"></div>
+      </div>
       <div id="useQuest">
           <label for="koeer">Antal liter diesel anvendt i år?</label>
           <input type="number" id="dieselInput" placeholder="Indtast din data her">
@@ -60,10 +69,10 @@ export default class DataPage {
           <input type="number" id="powerInput" placeholder="Indtast din data her">
 </div>
           </form>
-          <button class="buttongem" onclick="updateUser()">Gem</button>
+          <button class="buttongem" onclick="updateUser()">Gem indtastning</button>
           </section>
+          <div class="tabbarclear"></div>
           </section>
-
     `;
   }
 

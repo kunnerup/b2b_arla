@@ -13,12 +13,13 @@ export default class HomePage {
         <h2>Arlagården +</h2>
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
+      <p class="logud" onclick="logout()">LOG UD</p>
       <img class="smalledit" src="images/navigation/setup_grey.svg" alt="setup icon" onclick="openSetup()">
 
       <div id="updateProfile">
             <form>
               <label for="name">Navn</label>
-              <input type="text" id="name" placeholder="Indtast dit navn" disabled>
+              <input type="text" id="name" placeholder="Indtast dit navn">
 
               <label for="mail">Mail</label>
               <input type="email" id="mail" placeholder="Indtast din email" disabled>
@@ -152,6 +153,10 @@ export default class HomePage {
       let power = document.querySelector('#powerInput').value;
 
     this.authService.updateAuthUser(name, img, farm, cow, feed, feedself, milk, diesel, power);
+    this.cowPercent ();
+      this.milkPercent ();
+        this.feedPercent ();
+          this.usePercent ();
   }
 
   previewImage(file, previewId) {
@@ -163,6 +168,45 @@ export default class HomePage {
       reader.readAsDataURL(file);
     }
   }
+
+  cowPercent () {
+    if (document.querySelector('#cowInput').value === ""){
+      document.querySelector('.cowPercent').style.backgroundImage ="url('images/zero.svg')";
+    }else {
+      document.querySelector('.cowPercent').style.backgroundImage ="url('images/full.svg')"
+    }
+  }
+
+  milkPercent () {
+    if (document.querySelector('#milkInput').value === ""){
+      document.querySelector('.milkPercent').style.backgroundImage ="url('images/zero.svg')";
+    }else {
+      document.querySelector('.milkPercent').style.backgroundImage ="url('images/full.svg')"
+    }
+  }
+
+  feedPercent () {
+    if (document.querySelector('#feedInput').value === "" && document.querySelector('#feedSelfInput').value === ""){
+      document.querySelector('.feedPercent').style.backgroundImage ="url('images/zero.svg')";
+
+    } else if (document.querySelector('#feedInput').value = "null = false" && document.querySelector('#feedSelfInput').value === "" || document.querySelector('#feedInput').value === "" && document.querySelector('#feedSelfInput').value === "null = false") {
+      document.querySelector('.feedPercent').style.backgroundImage ="url('images/half.svg')";
+    } else {
+      document.querySelector('.feedPercent').style.backgroundImage ="url('images/full.svg')"
+  }
+}
+
+  usePercent () {
+    if (document.querySelector('#dieselInput').value === "" && document.querySelector('#powerInput').value === ""){
+      document.querySelector('.usePercent').style.backgroundImage ="url('images/zero.svg')";
+
+    } else if (document.querySelector('#dieselInput').value = "null = false" && document.querySelector('#powerInput').value === "" || document.querySelector('#dieselInput').value === "" && document.querySelector('#powerInput').value === "null = false") {
+      document.querySelector('.usePercent').style.backgroundImage ="url('images/half.svg')";
+    } else {
+      document.querySelector('.usePercent').style.backgroundImage ="url('images/full.svg')"
+  }
+}
+
 
   logout() {
     this.authService.logout();

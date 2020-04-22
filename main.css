@@ -9,70 +9,70 @@
 }
 
 /*ARLA FONTE*/
-  @font-face {
-    font-family: "Arla";
-    src: url("../fonts/arlaifbd.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/arlaifbd.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("../fonts/arlaifbd.otf") format("opentype"),
-      /* Open Type Font */
-      url("../fonts/arlaifbd.svg") format("svg"),
-      /* Legacy iOS */
-      url("../fonts/arlaifbd.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("../fonts/arlaifbd.woff") format("woff"),
-      /* Modern Browsers */
-      url("../fonts/arlaifbd.woff2") format("woff2");
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaifbd.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaifbd.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaifbd.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaifbd.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaifbd.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaifbd.woff") format("woff"),
     /* Modern Browsers */
-    font-weight: 700;
-    font-style: normal;
-  }
+    url("../fonts/arlaifbd.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal;
+}
 
-  /* Arla Normal Font Face */
-  @font-face {
-    font-family: "Arla";
-    src: url("../fonts/arlaifrg.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/arlaifrg.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("../fonts/arlaifrg.otf") format("opentype"),
-      /* Open Type Font */
-      url("../fonts/arlaifrg.svg") format("svg"),
-      /* Legacy iOS */
-      url("../fonts/arlaifrg.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("../fonts/arlaifrg.woff") format("woff"),
-      /* Modern Browsers */
-      url("../fonts/arlaifrg.woff2") format("woff2");
+/* Arla Normal Font Face */
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaifrg.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaifrg.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaifrg.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaifrg.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaifrg.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaifrg.woff") format("woff"),
     /* Modern Browsers */
-    font-weight: 400;
-    font-style: normal;
-  }
+    url("../fonts/arlaifrg.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
 
-  /* Arla Light Font Face */
-  @font-face {
-    font-family: "Arla";
-    src: url("../fonts/arlaiflt.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/arlaiflt.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("../fonts/arlaiflt.otf") format("opentype"),
-      /* Open Type Font */
-      url("../fonts/arlaiflt.svg") format("svg"),
-      /* Legacy iOS */
-      url("../fonts/arlaiflt.ttf") format("truetype"),
-      /* Safari, Android, iOS */
-      url("../fonts/arlaiflt.woff") format("woff"),
-      /* Modern Browsers */
-      url("../fonts/arlaiflt.woff2") format("woff2");
+/* Arla Light Font Face */
+@font-face {
+  font-family: "Arla";
+  src: url("../fonts/arlaiflt.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/arlaiflt.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("../fonts/arlaiflt.otf") format("opentype"),
+    /* Open Type Font */
+    url("../fonts/arlaiflt.svg") format("svg"),
+    /* Legacy iOS */
+    url("../fonts/arlaiflt.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/arlaiflt.woff") format("woff"),
     /* Modern Browsers */
-    font-weight: 300;
-    font-style: normal;
-  }
+    url("../fonts/arlaiflt.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 300;
+  font-style: normal;
+}
 
 /* ---------- OVERALL ---------- */
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -80,7 +80,7 @@
 html {
   color: var(--textgreen);
   background-color: var(--light_background);
-font-family: 'Arla', Helvetica, Arial, sans-serif;
+  font-family: 'Arla', Helvetica, Arial, sans-serif;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -105,16 +105,15 @@ font-family: 'Arla', Helvetica, Arial, sans-serif;
 }
 
 #whiteb {
-border: 1px solid var(--bottomgreen);
+  border: 1px solid var(--bottomgreen);
   padding: 10px 15px;
   width: auto;
   color: var(--bottomgreen);
   font-weight: lighter;
   font-size: 1em;
-    border-radius: 3px;
-    box-shadow: 4px 4px 10px var(--lightgrey);
+  border-radius: 3px;
+  box-shadow: 4px 4px 10px var(--lightgrey);
 }
-
 
 /* ---------- TOPBAREN MED SIDETITEL ---------- */
 .topbar {
@@ -132,17 +131,16 @@ border: 1px solid var(--bottomgreen);
   left: 20px;
   position: absolute;
   top: 20px;
-    text-decoration: none;
-    height: 20px;
-    width: 20px;
+  text-decoration: none;
+  height: 20px;
+  width: 20px;
 }
 
-header h2{
+header h2 {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 1.1em;
 }
-
 
 /* ---------- TABBAR I BuNDEN ---------- */
 .tabbar {
@@ -165,7 +163,7 @@ header h2{
   width: 40%;
 }
 
-.tab_left{
+.tab_left {
   left: 0;
 }
 
@@ -187,56 +185,64 @@ header h2{
 }
 
 .tabbar a.active .home {
-background-image: url(images/navigation/home_color.svg);
-}
-.tabbar a.active .dash {
-background-image: url(images/navigation/dash_color.svg);
-}
-.tabbar a.active .challengeicon {
-background-image: url(images/navigation/challenge_color.svg);
-}
-.tabbar a.active .enter {
-background-image: url(images/navigation/data_color.png);
-}
-.tabbar a.active .settings {
-background-image: url(images/navigation/setup_color.svg);
+  background-image: url(images/navigation/home_color.svg);
 }
 
-.home, .dash, .challengeicon, .enter, .settings{
+.tabbar a.active .dash {
+  background-image: url(images/navigation/dash_color.svg);
+}
+
+.tabbar a.active .challengeicon {
+  background-image: url(images/navigation/challenge_color.svg);
+}
+
+.tabbar a.active .enter {
+  background-image: url(images/navigation/data_color.png);
+}
+
+.tabbar a.active .settings {
+  background-image: url(images/navigation/setup_color.svg);
+}
+
+.home, .dash, .challengeicon, .enter, .settings {
   height: 35px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
+
 .home {
   background-image: url(images/navigation/home_grey.svg);
 }
+
 .dash {
   background-image: url(images/navigation/dash_grey.svg);
 }
+
 .challengeicon {
   background-image: url(images/navigation/challenge_grey.svg);
 }
+
 .enter {
   background-image: url(images/navigation/data_grey.png);
 }
+
 .settings {
   background-image: url(images/navigation/setup_grey.svg);
 }
 
 /*CHALLENGE BUTTON*/
 .challenge {
-background-color: #EBEBEC;
-border-radius: 50%;
-box-shadow: 0px 2px 5px grey;
-position: absolute;
-width: 65px;
-height: 65px;
-left: 50%;
-transform: translate(-50%, 0);
-bottom: 22px;
+  background-color: #EBEBEC;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px grey;
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 22px;
 }
-
 
 /* ---------- STYLING AF DE ENKELTE SIDER ---------- */
 .page {
@@ -246,17 +252,24 @@ bottom: 22px;
   padding: 55px 0;
 }
 
-
 /*HOME*/
-#home{
+#home {
   background-color: white;
 }
 
 #home .topbar {
-   background-color: white;
+  background-color: white;
 }
 
-.smalledit{
+.logud {
+  position: absolute;
+  left: 20px;
+  z-index: 1000;
+  padding-top: 20px;
+  color: var(--lightgrey);
+}
+
+.smalledit {
   height: 20px;
   position: absolute;
   right: 20px;
@@ -298,11 +311,11 @@ bottom: 22px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin:auto;
+  margin: auto;
 }
 
 #profile {
-width: 100%;
+  width: 100%;
 }
 
 #profile p {
@@ -314,7 +327,7 @@ width: 100%;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin:auto;
+  margin: auto;
   margin-top: 40px;
   margin-bottom: 10px;
 }
@@ -323,8 +336,8 @@ width: 100%;
   display: flex;
   justify-content: space-around;
   width: 72%;
-margin: auto;
-margin-bottom: 40px;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 #calltoaction a {
@@ -334,25 +347,25 @@ margin-bottom: 40px;
 #keydata {
   width: 95%;
   border-radius: 6px;
-padding-top: 20px;
-    margin: auto;
+  padding-top: 20px;
+  margin: auto;
   background-color: var(--light_background);
   color: var(--greytext);
 }
 
-#keydata div{
+#keydata div {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-justify-content: center;
-margin-top: 20px;
-margin-bottom: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #keydata div div {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 10px;
   width: 27%;
 }
@@ -376,10 +389,9 @@ div#fulllength {
   flex-grow: 3;
 }
 
-
 #borders {
   border-left: var(--lightgrey) 2px solid;
-border-right: var(--lightgrey) 2px solid;
+  border-right: var(--lightgrey) 2px solid;
 }
 
 #bestresults {
@@ -390,17 +402,17 @@ border-right: var(--lightgrey) 2px solid;
 }
 
 #bestresults div {
-display: flex;
-flex-direction: column;
-align-content: center;
-justify-content: space-between;
-min-width: 120px;
-max-width: 120px;
-padding: 10px;
-background-color: #CFFCDC;
-border: 3px solid var(--darkgreen);
-border-radius: 4px;
-margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  min-width: 120px;
+  max-width: 120px;
+  padding: 10px;
+  background-color: #CFFCDC;
+  border: 3px solid var(--darkgreen);
+  border-radius: 4px;
+  margin: 10px;
 }
 
 #bestresults h3 {
@@ -432,7 +444,6 @@ margin: 10px;
   display: none;
 }
 
-
 #badgets div {
   min-width: 140px;
   max-width: 140px;
@@ -446,21 +457,19 @@ margin: 10px;
 #updateProfile {
   display: none;
 }
-#updateProfile.show{
-  display:block;
-animation: fadeIn 0.4s;
+
+#updateProfile.show {
+  display: block;
+  animation: fadeIn 0.4s;
 }
 
 /*DASHBOARD*/
-
-
 /*CHALLENGE*/
-
-
 /*DATAINDSAMLING*/
-#enterData header{
+#enterData header {
   background-color: white;
 }
+
 #enterData {
   background-color: var(--light_background);
 }
@@ -472,19 +481,20 @@ animation: fadeIn 0.4s;
   margin-top: -10px;
 }
 
-#inputter{
+#inputter {
   background-color: var(--light_background);
   padding-bottom: 5%;
   padding-top: 5%;
   margin-top: 5%;
-
 }
-#inputdata h4{
+
+#inputdata h4 {
   margin-left: 5%;
   text-align: left;
   font-size: 25px;
 }
-#inputdata{
+
+#inputdata {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -495,13 +505,13 @@ animation: fadeIn 0.4s;
   width: 90%;
   margin-left: 5%;
   border-radius: 5px;
-
 }
+
 .buttongem {
   background-color: white;
   border-radius: 10px;
   color: white;
-  padding: 20px 40px;
+  padding: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -510,71 +520,45 @@ animation: fadeIn 0.4s;
   margin-top: 5%;
   color: var(--textgreen);
 }
+
 #inputdata label {
   text-align: center;
   font-size: 20px;
   margin-top: 5%;
-
 }
 
-#inputdata input{
-
+#inputdata input {
   width: 80%;
   height: 50px;
   text-align: center;
-
   border: var(--lightgrey) 1px solid;
   border-radius: 10px;
   font-size: 20px;
   margin-left: 9%;
-
-}
-#inputdata placeholder {
-
 }
 
 #cowQuest, #feedQuest, #useQuest, #milkQuest {
   display: none;
 }
-#cowQuest.show {display:flex;
-flex-direction: column;
-animation: fadeIn 1s;}
 
-#feedQuest {
-  display: none;
+#cowQuest.show, #feedQuest.show, #milkQuest.show, #useQuest.show {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1s;
 }
-#feedQuest.show {display:flex;
-flex-direction: column;
 
-animation: fadeIn 1s;
-}
-#milkQuest {
-  display: none;
-}
-#milkQuest.show {display:flex;
-flex-direction: column;
-animation: fadeIn 1s;}
-
-#useQuest {
-  display: none;
-}
-#useQuest.show {display:flex;
-flex-direction: column;
-animation: fadeIn 1s;}
-
-#headandarrow{
+#headandarrow {
   display: flex;
   flex-direction: row;
-}
-#headandarrow img{
-  height: auto;
-  width: 25px;
-  margin-left: 4%;
+  justify-content: space-between;
 }
 
-
-/*SETUP*/
-
+.cowPercent, .milkPercent, .usePercent, .feedPercent {
+  height: 38px;
+  width: 38px;
+  background-image: url(images/zero.svg);
+  margin-right: 20px;
+}
 
 /* ---------- ANIMATIONER ---------- */
 /* fade in */
@@ -676,15 +660,9 @@ animation: fadeIn 1s;}
   color: var(--green);
 }
 
-
 /*Responsive*/
 /*---------------TABLET-----------------*/
-@media (min-width: 600px) {
-
-}
-
+@media (min-width: 600px) {}
 
 /*-----------DESKTOP-------------------*/
-@media (min-width: 992px) {
-
-}
+@media (min-width: 992px) {}
