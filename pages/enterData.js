@@ -23,7 +23,7 @@ export default class DataPage {
     </div>
     <div id="cowQuest">
       <label for="koeer">Hvor mange køer har du?</label>
-      <input type="text" id="cowInput" placeholder="Indtast din data her">
+      <input type="number" id="cowInput" placeholder="Indtast din data her">
       </div>
 
 
@@ -33,11 +33,11 @@ export default class DataPage {
       <h4 id="feedKnap" onclick="feedData()">Foder ▼</h4>
       <div id="feedQuest">
         <label for="koeer">Antal kg foder benyttet i år?</label>
-        <input type="text" id="feedInput" placeholder="Indtast din data her">
+        <input type="number" id="feedInput" placeholder="Indtast din data her">
 
 
         <label for="koeer">Andel foder der er selvforsynende?</label>
-        <input type="text" id="feedSelfInput" placeholder="Indtast din data her">
+        <input type="number" id="feedSelfInput" placeholder="Indtast din data her">
   </div>
 </form>
 
@@ -45,7 +45,7 @@ export default class DataPage {
 <h4 id="milkKnap" onclick="milkData()">Mælk ▼</h4>
 <div id="milkQuest">
   <label for="koeer">Hvor mange kg mælk har du produceret i år?</label>
-  <input type="text" id="milkInput" placeholder="Indtast din data her">
+  <input type="number" id="milkInput" placeholder="Indtast din data her">
 </div>
   </form>
 
@@ -54,10 +54,10 @@ export default class DataPage {
       <h4 id="useKnap" onclick="useData()">Forbrug ▼</h4>
       <div id="useQuest">
           <label for="koeer">Antal liter diesel anvendt i år?</label>
-          <input type="text" id="dieselInput" placeholder="Indtast din data her">
+          <input type="number" id="dieselInput" placeholder="Indtast din data her">
 
           <label for="koeer">Antal kWh strøm anvendt i år?</label>
-          <input type="text" id="powerInput" placeholder="Indtast din data her">
+          <input type="number" id="powerInput" placeholder="Indtast din data her">
 </div>
           </form>
           <button class="buttongem" onclick="updateUser()">Gem</button>
@@ -66,5 +66,5 @@ export default class DataPage {
 
     `;
   }
-  
+
 }
