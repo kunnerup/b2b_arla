@@ -29,19 +29,17 @@ dashboard() {
 
   //APPEND ANTAL KØER
   appendCowsChart(data) {
-    // CREATE CHART
+    // OPRET DIAGRAMMET - CHART.JS
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
-      type: 'line',
+      type: 'bar',
       data: {
         datasets: [{
           data: data.numberOfCows,
-          label: 'Number of Cows',
+          label: 'Antal køer, år for år',
           fill: false,
-          borderColor: "#e755ba",
-          backgroundColor: "#e755ba",
-          pointBackgroundColor: "#55bae7",
-          pointBorderColor: "#55bae7",
+          backgroundColor: "#137D4E",
+          pointBackgroundColor: "#006C3A",
           pointHoverBackgroundColor: "#55bae7",
           pointHoverBorderColor: "#55bae7",
         }],

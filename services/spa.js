@@ -10,21 +10,21 @@ class SpaService {
     this.pageChange();
   }
 
-  // hide all pages
+  // Skjul alle sider. Når denne køres vil den ikke blot sætte den nye side ovenpå, men erstatte den.
   hideAllPages() {
     for (let page of this.pages) {
       page.style.display = "none";
     }
   }
 
-  // show page or tab
+  // Vis siden som block
   showPage(pageId) {
     this.hideAllPages();
     document.querySelector(`#${pageId}`).style.display = "block";
     this.setActiveTab(pageId);
   }
 
-  // sets active tabbar/ menu item
+  // Sætter side-id'et til at være active
   setActiveTab(pageId) {
     for (let navItem of this.navItems) {
       if (`#${pageId}` === navItem.getAttribute("href")) {
@@ -35,13 +35,7 @@ class SpaService {
     }
   }
 
-  // navigate to a new view/page by changing href
-  navigateTo(pageId) {
-    window.location.href = `#${pageId}`;
-  }
-
-  // set default page or given page by the hash url
-  // function is called 'onhashchange'
+  // Øverst er "home" angivet som default, og det bestemmes her at den skal åbne denne.
   pageChange() {
     let page = this.defaultPage;
     if (window.location.hash) {
@@ -50,13 +44,13 @@ class SpaService {
     this.showPage(page);
   }
 
-  // show and hide tabbar
+  // Skjuler og viser menubaren i bunden når det er relevant - eksempelvis før der lgges ind.
   hideTabbar(hide) {
-    let tabbar = document.querySelector('#tabbar');
+    let menu = document.querySelector('#tabbar');
     if (hide) {
-      tabbar.classList.add("hide");
+      menu.classList.add("hide");
     } else {
-      tabbar.classList.remove("hide");
+      menu.classList.remove("hide");
     }
 
 //TILBAGE KNAP
