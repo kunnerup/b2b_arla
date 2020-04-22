@@ -14,8 +14,11 @@ export default class DataPage {
       <h3>Data indsamling</h3>
 
 <section id="inputter">
-    <form id="inputdata">
-    <h4 id="cowKnap" onclick="cowData()">Køer ▼</h4>
+    <form id="inputdata"><div id="headandarrow"
+    onclick="cowData();">
+    <h4 id="cowKnap" >Køer</h4>
+    <img src="images/navigation/arrowinput.svg" id="myimage" >
+    </div>
     <div id="cowQuest">
       <label for="koeer">Hvor mange køer har du?</label>
       <input type="text" id="name" placeholder="Indtast din data her">

@@ -477,7 +477,7 @@ animation: fadeIn 0.4s;
   padding-bottom: 5%;
   padding-top: 5%;
   margin-top: 5%;
-  margin-bottom:
+
 }
 #inputdata h4{
   margin-left: 5%;
@@ -514,17 +514,19 @@ animation: fadeIn 0.4s;
   text-align: center;
   font-size: 20px;
   margin-top: 5%;
+
 }
 
 #inputdata input{
 
   width: 80%;
   height: 50px;
-  text-align:left;
-  margin-left: 4%;
+  text-align: center;
+
   border: var(--lightgrey) 1px solid;
   border-radius: 10px;
   font-size: 20px;
+  margin-left: 9%;
 
 }
 #inputdata placeholder {
@@ -543,6 +545,7 @@ animation: fadeIn 1s;}
 }
 #feedQuest.show {display:flex;
 flex-direction: column;
+
 animation: fadeIn 1s;
 }
 #milkQuest {
@@ -558,6 +561,17 @@ animation: fadeIn 1s;}
 #useQuest.show {display:flex;
 flex-direction: column;
 animation: fadeIn 1s;}
+
+#headandarrow{
+  display: flex;
+  flex-direction: row;
+}
+#headandarrow img{
+  height: auto;
+  width: 25px;
+  margin-left: 4%;
+}
+
 
 /*SETUP*/
 
