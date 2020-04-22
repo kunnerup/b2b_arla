@@ -8,7 +8,7 @@ export default class DashboardPage{
   }
 
   async init() {
-    let uid = "j7WsepsaogO7mvb2S35LEfdQLmq1"; // using a fixed uid - want to make sure there's data matching an uid in the database
+    let uid = "farm1"; // using a fixed uid - want to make sure there's data matching an uid in the database
     let data = await sustainabilityDataService.getPreparedDataByUid(uid);
     // STARTER APPEND FUNKTIONERNE - TILFØJ ALLE DER SKAL APPENDES
     this.appendCowsChart(data);
@@ -29,19 +29,17 @@ dashboard() {
 
   //APPEND ANTAL KØER
   appendCowsChart(data) {
-    // CREATE CHART
+    // OPRET DIAGRAMMET - CHART.JS
     let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
-      type: 'line',
+      type: 'bar',
       data: {
         datasets: [{
-          data: data.numberOfCows,
-          label: 'Number of Cows',
+          data: data.milkProduction,
+          label: 'Antal køer, år for år',
           fill: false,
-          borderColor: "#e755ba",
-          backgroundColor: "#e755ba",
-          pointBackgroundColor: "#55bae7",
-          pointBorderColor: "#55bae7",
+          backgroundColor: "#137D4E",
+          pointBackgroundColor: "#006C3A",
           pointHoverBackgroundColor: "#55bae7",
           pointHoverBorderColor: "#55bae7",
         }],
@@ -51,8 +49,8 @@ dashboard() {
         scales: {
           yAxes: [{
             ticks: {
-              min: (Math.min(...data.numberOfCows) - 3),
-              max: (Math.max(...data.numberOfCows) + 1)
+              min: (Math.min(...data.milkProduction) - 1000),
+              max: (Math.max(...data.milkProduction) + 200)
             }
           }]
         }

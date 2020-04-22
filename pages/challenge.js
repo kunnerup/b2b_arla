@@ -19,7 +19,7 @@ export default class ChallengePage {
   }
 
   challenge() {
-    document.getElementById('content').innerHTML += /*html*/ `
+    document.getElementById('content').innerHTML +=  `
       <section id="challenge" class="page">
         <header class="topbar">
           <h2>Arla gården +</h2>

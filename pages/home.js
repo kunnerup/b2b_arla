@@ -7,7 +7,7 @@ export default class HomePage {
   }
 
   home(name, img, farm) {
-    document.getElementById('content').innerHTML += /*html*/ `
+    document.getElementById('content').innerHTML += `
       <section id="home" class="page">
       <header class="topbar">
         <h2>Arlagården +</h2>
