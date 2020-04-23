@@ -474,7 +474,7 @@ div#fulllength {
 
 
 #rightimpotant {
-width: 90%;
+width: 60%;
 }
 
 #feeding {
@@ -691,6 +691,9 @@ width: 35%;
 /*-----------DESKTOP-------------------*/
 @media (min-width: 992px) {}
 
-  /*-------------Indtastdata---------*/
+/*GENERAL OG MENUBAR DESKTOP*/
+
+
+  /*-------------INDTAST DATA DEKSTOP---------*/
 
 }
