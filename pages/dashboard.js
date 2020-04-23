@@ -1,7 +1,7 @@
 import sustainabilityDataService from "../services/sustainabilityData.js";
 import authService from "../services/auth.js";
 
-export default class DashboardPage{
+export default class DashboardPage {
   constructor() {
     this.dashboard();
 
@@ -14,15 +14,33 @@ export default class DashboardPage{
     this.appendCowsChart(data);
   }
 
-dashboard() {
+  dashboard() {
     document.getElementById('content').innerHTML += `
       <section id="dashboard" class="page">
         <header class="topbar">
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
-        <h3>Herd - Number of Cows</h3>
+        <h2>Dashboard</h3>
+
+<article id="mostimportantdash">
+    <div id="rightimpotant">
+        <h3>Antal køer</h3>
         <canvas id="cows"></canvas>
+    </div>
+
+    <div id="double">
+        <div>
+              <h3>Selvforsynende foder</h3>
+              <canvas id="feeding"></canvas>
+        </div>
+        <div class="leftimportant">
+              <h3>Selvforsynende foder</h3>
+              <canvas id="cows3"></canvas>
+        </div>
+    </div>
+
+</article>
       </section>
     `;
   }
@@ -35,7 +53,7 @@ dashboard() {
       type: 'bar',
       data: {
         datasets: [{
-          data: data.milkProduction,
+          data: data.dieselUsed,
           label: 'Antal køer, år for år',
           fill: false,
           backgroundColor: "#137D4E",
@@ -49,11 +67,12 @@ dashboard() {
         scales: {
           yAxes: [{
             ticks: {
-              min: (Math.min(...data.milkProduction) - 1000),
-              max: (Math.max(...data.milkProduction) + 200)
+              min: (Math.min(...data.dieselUsed) - 1000),
+              max: (Math.max(...data.dieselUsed) + 200)
             }
           }]
         }
       }
     });
-  }}
+  }
+}

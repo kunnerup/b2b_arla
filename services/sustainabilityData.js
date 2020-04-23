@@ -28,6 +28,16 @@ class SustainabilityDataService {
     let numberOfCows = [];
     let milkProduction = [];
     let carbonFootprint = [];
+    let cowsFeed = [];
+    let dieselFootprint = [];
+    let dieselUsed = [];
+    let elFootprint = [];
+    let elUsed = [];
+    let feedFootprint = [];
+    let feedSelf = [];
+    let methaneGas = [];
+    let region = [];
+
     //laver et loop som så vi får alle elementerne ind
     for (const dataObject of sustainabilityData) {
       //Pusher dataen ind i vores arrays
@@ -35,12 +45,31 @@ class SustainabilityDataService {
       numberOfCows.push(dataObject.numberOfCows);
       milkProduction.push(dataObject.herdMilkProduction);
       carbonFootprint.push(dataObject.carbonFootprintWholeFarm);
+        cowsFeed.push(dataObject.cowsFeedConsumption);
+          dieselFootprint.push(dataObject.dieselFootprint);
+            dieselUsed.push(dataObject.dieselUsed);
+              elFootprint.push(dataObject.elfootPrint);
+                elUsed.push(dataObject.elUsed);
+                  feedFootprint.push(dataObject.feedFootprint);
+                    feedSelf.push(dataObject.herdSelfSufficiencyInFeed);
+                      methaneGas.push(dataObject.methaneGas);
+                        region.push(dataObject.region);
+
     }
     return {
       years,
       numberOfCows,
       milkProduction,
-      carbonFootprint
+      carbonFootprint,
+      cowsFeed,
+      dieselFootprint,
+      dieselUsed,
+      elFootprint,
+      elUsed,
+      feedFootprint,
+      feedSelf,
+      methaneGas,
+      region
     };
   }
 
