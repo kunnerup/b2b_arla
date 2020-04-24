@@ -472,19 +472,169 @@ div#fulllength {
   margin-top: 35px;
 }
 
-
-#rightimpotant {
-width: 60%;
+#dashboard h3, #dashboard p {
+  color: white;
 }
 
-#feeding {
-width: 35%;
+#rightimpotant, .cards{
+  background-color: var(--darkgreen);
+  border-radius: 6px;
+  width: 95%;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 25px;
 }
 
-.leftimportant {
-  display: none;
+#cards {
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
+.cards {
+  margin-left: 10px;
+    height: 250px;
+    width: 90%;
+}
+
+.cards canvas {
+  height: 90% !important;
+}
+
+#double {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#double div {
+  width: 48%;
+  border-radius: 6px;
+  padding-top: 25px;
+}
+
+#double div h3 {
+  color: var(--darkgreen);
+}
+
+
+/*dashboard slider*/
+
+.slider {
+  width: 220px;
+  height: 220px;
+  background: var(--greytext);
+  border-radius: 50%;
+    -webkit-appearance: none;
+  margin: auto;
+    margin-top: 10px;
+}
+
+.slider::before{
+  content: "1 kg pr. år";
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 98px;
+  color: var(--greytext);
+  width: 35px;
+  font-size: 0.85em;
+  text-align: right;
+}
+
+.slider::after{
+  content: "100 kg pr. år";
+  position: absolute;
+  margin-left: 224px;
+  margin-top: 98px;
+  color: var(--greytext);
+  width: 42px;
+  font-size: 0.85em;
+}
+
+.slider:hover {
+   filter: brightness(110%);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background: var(--darkgreen);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#inputnumber {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index: 200;
+  font-size: 2em;
+  opacity: 0.8;
+  transform: translateX(-50%)
+}
+
+#infotekst {
+  opacity: 0.8;
+  position: absolute;
+  margin-left: 50%;
+  margin-right: 50%;
+    transform: translateX(-50%);
+    margin-top: -80px;
+}
+
+#footprintfunction {
+margin-top: 100px;
+}
+
+#footprintfunction p  {
+color: var(--darkgreen);
+width:90%;
+margin: auto;
+font-size: 0.95em;
+}
+
+#footprintberegner {
+  width: 90%;
+  background-color: var(--lightgrey);
+  border-radius: 6px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#changenumbers {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  margin: auto;
+}
+
+#changenumbers div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#motivation{
+  width: 90%;
+  padding-top: 30px;
+}
 
 /*CHALLENGE*/
 
