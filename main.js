@@ -27,6 +27,7 @@ window.ready = () => {
       homePage.milkPercent ();
         homePage.feedPercent ();
           homePage.usePercent ();
+          dashboardPage.appendRange();
 }
 
 window.logout = () => homePage.logout();

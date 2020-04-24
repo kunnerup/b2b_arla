@@ -43,7 +43,7 @@ export default class HomePage {
 </article>
 
 <article id="keydata">
-<h3>Sidste års tal</h3>
+<h3>Seneste tal</h3>
 
 <div>
   <div>
