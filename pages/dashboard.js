@@ -21,7 +21,7 @@ export default class DashboardPage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
-        <h2>Dashboard</h3>
+        <h3>Dashboard</h3>
 
 <article id="mostimportantdash">
     <div id="rightimpotant">
