@@ -906,14 +906,11 @@ font-size: 0.95em;
 
 #imageboks{
   display: block;
-  width: 50%;
+  width: 45%;
   position: fixed;
   height: 100vh;
   z-index: 2;
   top: 1%;
-
-
-
 
 }
 #imageboks ul{
@@ -938,11 +935,9 @@ border-radius: 30px;
 }
 
 #imageboks img{
-  width: 100%;
   height: 100%;
-  object-fit: scale-down;
-
-
+  width: 100%;
+object-fit: cover;
 }
 #indtastkasse{
   width: 50%;
