@@ -25,6 +25,69 @@ export default class ChallengePage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
+<h1>Målsætninger & udfordringer</h1>
+<div id="buttons">
+<h2 id="greenb" class="hideondesktop">Opret målsætning eller udfordring</h2>
+</div>
+
+
+<article id="challengeleft" class="hideonmobile">
+  <div>
+        <div id="opret">
+        <h2>Opret målsætning eller udfordring</h2>
+        <p>Her kan du lave en konkurrence mod en kollega eller opsætte en målsætning for dig selv.
+Løbende får du en status på, hvordan du klarer dig,
+gode råd til, hvordan du vinder og ikke
+mindst en masse spændende udfordringer i hverdagen.</p>
+<form>
+<label for="hvad">Hvad skal dit mål være?</label>
+<select name="hvad">
+   <option>Spare mest CO2</option>
+   <option>Sænke dieselforbruget mest</option>
+   <option>Sænke strømforbruget mest</option>
+   <option>Øge mængden af mælk pr. ko mest i procent</option>
+ </select>
+
+<label for="tal">Navn</label>
+<input type="text" id="tal" placeholder="Indtast tal i liter eller procent">
+
+<label for="when">Hvornår skal din udfordring gælde til?</label>
+<input type="range" id="when" min="1" max="10">
+
+<label for="who">Hvem vil du gerne udfordre?</label>
+<select name="cars" id="who">
+   <option>Mig selv</option>
+   <option>Sjællands gennemsnit</option>
+   <option>Jyllands gennemsnit</option>
+   <option>Danmarks gennemsnit</option>
+ </select>
+</form>
+        </div>
+        <div id="challengeinputs">
+        </div>
+  </div>
+
+
+  <div>
+      <div>
+      </div>
+      <div>
+      </div>
+  </div>
+</article>
+
+
+
+<article id="challengeright">
+<div>
+
+</div>
+
+<div>
+
+</div>
+</article>
+
         <h3>Herd - Number of Cows</h3>
         <canvas id="cowsCompare"></canvas>
       </section>

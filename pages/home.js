@@ -38,11 +38,78 @@ export default class HomePage {
       </section>
 
 <article id="calltoaction">
-  <a href="#enterData"><h2 id="greenb">Indtast data</h2></a>
-  <a href="#dashboard"><h2 id="whiteb">Dashboard</h2></a>
+  <a href="#dashboard"><div id="greenb"><h2>Dashboard</h2><p class="hideonmobile">Få et overblik over dit landbrug på dit personlige dashboard</p></div></a>
+    <a href="#challenge"><div id="greenb2" class="hideonmobile"><h2>Udfordringen</h2><p class="hideonmobile">Opret en målsætning for dig selv eller udfodr en kollega
+    </p></div></a>
+  <a href="#enterData"><div id="whiteb"><h2>Indtast data</h2><p class="hideonmobile">Indtast dine data i de simple indtastningsfelter eller brug DMS.</p></div></a>
+
+<div id="ekstrainfo">
+  <article id="keydata" class="hideonmobile">
+  <div>
+    <div>
+      <h4>370,86</h4>
+      <p>Samlet CO2-aftryk i tons</p>
+      <p>DOWN</p>
+    </div>
+    <div id="borders">
+      <h4>7830,04</h4>
+      <p>Liter mælk produceret</p>
+      <p>UP</p>
+    </div>
+    <div>
+      <h4>5469,21</h4>
+      <p>Kg foder benytter</p>
+      <p>DOWN</p>
+    </div>
+  </div>
+  </article>
+
+
+  <article id="keydata" class="hideonmobile">
+  <div>
+    <div>
+      <h4>370,86</h4>
+      <p>Samlet CO2-aftryk i tons</p>
+      <p>DOWN</p>
+    </div>
+    <div id="borders">
+      <h4>7830,04</h4>
+      <p>Liter mælk produceret</p>
+      <p>UP</p>
+    </div>
+    <div>
+      <h4>5469,21</h4>
+      <p>Kg foder benytter</p>
+      <p>DOWN</p>
+    </div>
+  </div>
+  </article>
+
+
+  <article id="keydata" class="hideonmobile">
+  <div>
+    <div>
+      <h4>370,86</h4>
+      <p>Samlet CO2-aftryk i tons</p>
+      <p>DOWN</p>
+    </div>
+    <div id="borders">
+      <h4>7830,04</h4>
+      <p>Liter mælk produceret</p>
+      <p>UP</p>
+    </div>
+    <div>
+      <h4>5469,21</h4>
+      <p>Kg foder benytter</p>
+      <p>DOWN</p>
+    </div>
+  </div>
+  </article>
+</div>
+
 </article>
 
-<article id="keydata">
+<article id="keydata" class="hideondesktop">
 <h3>Seneste tal</h3>
 
 <div>
@@ -69,7 +136,7 @@ export default class HomePage {
 </div>
 </article>
 
-<article>
+<article class="bestbox">
 <h2 class="alignleft">Personlige rekorder</h2>
 <div id="bestresults">
   <div>
@@ -100,7 +167,7 @@ export default class HomePage {
 </div>
 </article>
 
-<article >
+<article>
 <h2 class="alignleft">Bedrifter</h2>
 <div id="badgets">
 
@@ -130,7 +197,7 @@ export default class HomePage {
 </div>
 </article>
 
-<article id="activechallenges">
+<article id="activechallenges" class="hideondesktop">
 <h2 class="alignleft">Aktive målsætninger & udfordringer</h2>
 </article>
 

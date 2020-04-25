@@ -21,7 +21,7 @@ export default class DashboardPage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
-        <h2>Dashboard</h3>
+        <h2>Personligt dashboard</h2>
 
 <article id="mostimportantdash">
     <div id="rightimpotant">
@@ -31,7 +31,7 @@ export default class DashboardPage {
 
     <div id="double">
         <div>
-              <h3>Selvforsynende foder</h3>
+              <h3>Selvforsynende foder i 2020</h3>
               <canvas id="feeding"></canvas>
         </div>
         <div class="leftimportant">
@@ -40,6 +40,26 @@ export default class DashboardPage {
         </div>
     </div>
 
+<div id="cards">
+
+<div class="cards">
+      <h3>Gasser du op eller ned?</h3>
+      <p>Methangas pr. kg mælk produceret</p>
+      <canvas id="card1"></canvas>
+</div>
+
+<div class="cards">
+      <h3>Hvem laver mest mælk?</h3>
+      <canvas id="card2"></canvas>
+</div>
+
+<div class="cards" id="thirdcard">
+      <h3>Diesel og strømforbrug i kr.</h3>
+      <p>Dit årlige pengeforbrug</p>
+      <canvas id="card3"></canvas>
+</div>
+
+</div>
 </article>
       </section>
     `;
