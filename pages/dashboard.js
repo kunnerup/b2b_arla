@@ -11,12 +11,7 @@ export default class DashboardPage {
     let uid = "farm1"; // using a fixed uid - want to make sure there's data matching an uid in the database
     let data = await sustainabilityDataService.getPreparedDataByUid(uid);
     // STARTER APPEND FUNKTIONERNE - TILFØJ ALLE DER SKAL APPENDES
-    this.appendFootprint(data);
-    this.appendFood(data);
-    this.appendCard1(data);
-    this.appendCard2(data);
-    this.appendSmall2(data);
-      this.appendCard3(data);
+    this.appendCowsChart(data);
   }
 
   dashboard() {
@@ -30,9 +25,8 @@ export default class DashboardPage {
 
 <article id="mostimportantdash">
     <div id="rightimpotant">
-        <h3>Dit CO2-aftryk</h3>
-        <p>Pr. kg. mælk produceret</p>
-        <canvas id="footprint"></canvas>
+        <h3>Antal køer</h3>
+        <canvas id="cows"></canvas>
     </div>
 
     <div id="double">
@@ -41,7 +35,7 @@ export default class DashboardPage {
               <canvas id="feeding"></canvas>
         </div>
         <div class="leftimportant">
-              <h3>Samlet CO2-udledning i 2020</h3>
+              <h3>Selvforsynende foder</h3>
               <canvas id="cows3"></canvas>
         </div>
     </div>
@@ -67,320 +61,38 @@ export default class DashboardPage {
 
 </div>
 </article>
-
-<article id="footprintfunction">
-<h2>CO2-beregneren</h2>
-<p>Vælg mængden af CO2 du gerne vil mindske med årligt, og se hvor meget du kan spare, og hvor meget der skal til.</p>
-<h3 id="inputnumber"></h3>
-<input id="slider" type="range" min="1" min="0" max="100" class="slider">
-<h3 id="infotekst">CO2 sparet</h3>
-
-<div id="footprintberegner">
-  <div id="changenumbers">
-    <div>
-    <h2 id"moneyFuture">kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
-    </div>
-    <div>
-    <h2>kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
-    </div>
-</div>
-
-<p id="motivation"></p>
-  <div>
-</aticle>
-
-
-<div class="tabbarclear"></div>
       </section>
     `;
   }
 
-  appendRange (){
-    let inputTal = document.getElementById("inputnumber");
-      let besked = document.getElementById("motivation");
-    let range = document.getElementById("slider");
-    let moneyFuture = document.getElementById("earning");
-    inputTal.innerHTML = range.value + "kg";
-
-
-    range.oninput = function() {
-
-  if (range.value > 0 && range.value < 25){
-    besked.innerHTML = "Du har valgt et realistisk mål! Du kan prøve at ændre lidt på dit foder til køerne. Måske kan du få dem til at bøvse mindre."
-  }else if (range.value > 24 && range.value < 75){
-    besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi."
-  } else {
-    besked.innerHTML = "Puha, du får travlt i år. Skift dine maskiner til mindre dieselslugere. Sørg for at køerne får det rigtige at spise, og gør det så selvforsynende som muligt."
-  }
-  inputTal.innerHTML = this.value + "kg";
-  moneyFuture.innerHTML = "black";
-}
-}
-
-  //APPEND CO2aftrykket
-  appendFootprint(data) {
+  //APPEND ANTAL KØER
+  appendCowsChart(data) {
     // OPRET DIAGRAMMET - CHART.JS
-    let chartContainer = document.getElementById("footprint");
+    let chartContainer = document.getElementById("cows");
     let chart = new Chart(chartContainer, {
-      type: 'line',
+      type: 'bar',
       data: {
         datasets: [{
-          // DATASET 1
-          data: data.dieselFootprint,
-          label: 'CO2, Diesel',
+          data: data.dieselUsed,
+          label: 'Antal køer, år for år',
           fill: false,
-          backgroundColor: "white",
-          pointBackgroundColor: "white",
-            borderColor: "white",
+          backgroundColor: "#137D4E",
+          pointBackgroundColor: "#006C3A",
           pointHoverBackgroundColor: "#55bae7",
           pointHoverBorderColor: "#55bae7",
-        },
-        // DATASET 2
-        {
-          data: data.elFootprint,
-          label: 'CO2, Strøm',
-          fill: false,
-          backgroundColor: "#1d52a8",
-          pointBackgroundColor: "#1d52a8",
-          borderColor: "#1d52a8",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7",
-        },
-        // DATASET 3
-        {
-          data: data.feedFootprint,
-          label: 'CO2, foder',
-          fill: false,
-          backgroundColor: "#e89a41",
-          pointBackgroundColor: "#e89a41",
-          borderColor: "#e89a41",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7",
-        }
-
-      ],
-        labels: data.years,
+        }],
+        labels: data.years
       },
       options: {
-        legend:{
-          labels: {
-            fontColor: "white",
-          }
-        },
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true,
-              max: (Math.max(...data.dieselFootprint) + 0.13),
-              fontColor: "#e6e6e6",
-            }
-          }],
-          xAxes: [{
-            ticks: {
-              fontColor: "#e6e6e6",
+              min: (Math.min(...data.dieselUsed) - 1000),
+              max: (Math.max(...data.dieselUsed) + 200)
             }
           }]
         }
       }
     });
   }
-
-
-  //APPEND CARD ONE
-  appendCard1(data) {
-    // OPRET DIAGRAMMET - CHART.JS
-    let chartContainer3 = document.getElementById("card1");
-    let chart3 = new Chart(chartContainer3, {
-      type: 'bar',
-      data: {
-        datasets: [{
-          // DATASET 1
-          data: data.milkProduction,
-          label: 'Kg mælk produceret',
-          fill: false,
-          backgroundColor: "white",
-          pointBackgroundColor: "white",
-            borderColor: "white",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7"
-        },
-        // DATASET 2
-        {
-          data: data.totalMethane,
-          label: 'CO2 udledning fra methangas',
-          fill: false,
-          backgroundColor: "#1d52a8",
-          pointBackgroundColor: "#1d52a8",
-          borderColor: "#1d52a8",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7",
-        }
-
-      ],
-        labels: data.years,
-      },
-      options: {
-        legend:{
-          labels: {
-            fontColor: "#e6e6e6",
-          }          ,
-          scales: {
-            yAxes: [{
-              ticks: {
-                fontColor: "#e6e6e6",
-                beginAtZero: true
-              }
-            }],
-            xAxes: [{
-              ticks: {
-                fontColor: "#e6e6e6"
-              }
-            }]
-          }
-        }
-      }
-    });
-  }
-
-
-  //APPEND CARD TWO
-  appendCard2(data) {
-    // OPRET DIAGRAMMET - CHART.JS
-    let chartContainer4 = document.getElementById("card2");
-    let chart4 = new Chart(chartContainer4, {
-      type: 'horizontalBar',
-          data: {
-              datasets: [{
-                  label: 'Dine kg mælk produceret',
-                  data: data.milkProduction,
-                  backgroundColor: "#1d52a8",
-              },{
-                  label: 'Landsgennemsnit kg mælk produceret',
-                  data: ["10111.111", "9777.778", "8190.517888889", "9414.0908889", "9437.95322"],
-                  backgroundColor: "white",
-
-              }
-            ],
-              labels: data.years
-          },
-          options: {
-            legend:{
-              labels: {
-                fontColor: "white",
-              }
-            },
-            scales: {
-              yAxes: [{
-                ticks: {
-                  fontColor: "#e6e6e6",
-                }
-              }],
-              xAxes: [{
-                ticks: {
-                  beginAtZero: true,
-                  fontColor: "#e6e6e6",
-                }
-              }]
-            }
-          }
-    });
-  }
-
-
-
-  //APPEND CARD 3
-  appendCard3(data) {
-    // OPRET DIAGRAMMET - CHART.JS
-    let chartContainer6 = document.getElementById("card3");
-    let chart6 = new Chart(chartContainer6, {
-      type: 'bar',
-      data: {
-        datasets: [{
-          // DATASET 1
-          data: data.dieselMoney,
-          label: 'Dieselforbrug i kr.',
-          fill: false,
-          backgroundColor: "white",
-          pointBackgroundColor: "white",
-            borderColor: "white",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7",
-        },
-        // DATASET 2
-        {
-          data: data.elMoney,
-          label: 'Strømforbrug i kr.',
-          fill: false,
-          backgroundColor: "#1d52a8",
-          pointBackgroundColor: "#1d52a8",
-          borderColor: "#1d52a8",
-          pointHoverBackgroundColor: "#55bae7",
-          pointHoverBorderColor: "#55bae7",
-        }
-      ],
-        labels: data.years,
-      },
-      options: {
-        legend:{
-          labels: {
-            fontColor: "white",
-          }
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true,
-              max: (Math.max(...data.elMoney) + 15000),
-              fontColor: "#e6e6e6",
-            }
-          }],
-          xAxes: [{
-            ticks: {
-              fontColor: "#e6e6e6",
-            }
-          }]
-        }
-      }
-    });
-  }
-
-
-appendFood(data) {
-  // OPRET DIAGRAMMET - CHART.JS
-    let uid = "feed";
-  let chartContainer2 = document.getElementById("feeding");
-  let chart2 = new Chart(chartContainer2, {
-    type: 'doughnut',
-    data: {
-      labels: ["Importeret foder, kg", "Selvforsynende foder, kg"],
-        datasets: [{
-          label: "Foder angivet i kg",
-          data: ["2394.973", "5435.063009"],
-          backgroundColor: ["#1d52a8", "#44916F"]
-      }
-    ]
-    }
-  });
-}
-
-appendSmall2(data) {
-  // OPRET DIAGRAMMET - CHART.JS
-    let uid = "feed";
-  let chartContainer2 = document.getElementById("cows3");
-  let chart2 = new Chart(chartContainer2, {
-    type: 'doughnut',
-    data: {
-      labels: ["Dit CO2-aftryk", "Landsgennemsnit"],
-        datasets: [{
-          label: "CO2-udledning i tons",
-          data: ["370.858", "2817.27978"],
-          backgroundColor: ["#1d52a8", "#44916F"]
-      }
-    ]
-    }
-  });
-}
-
 }

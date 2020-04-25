@@ -17,9 +17,10 @@ export default class DataPage {
       <div id="overboks">
       <div id="imageboks">
         <h4>dataindsamling</h4>
+
         <ul>
 
-<li><div class="cowPercent"></div> <p>Hej</p></li>
+<li><div class="cowPercent"></div></li>
 
 <li><div class="feedPercent"></div></li>
 
@@ -96,12 +97,10 @@ export default class DataPage {
 </div>
 
 
-
+</section>
 </div>
 
-          </section>
-
-          <div class="tabbarclear"></div>
+<div class="tabbarclear"></div>
           </section>
     `;
   }

@@ -742,8 +742,8 @@ margin-bottom: 35px;
 #inputter {
   background-color: var(--light_background);
   padding-bottom: 5%;
-  padding-top: 5%;
-  margin-top: 5%;
+
+
 }
 
 #inputdatacow h5, #inputdatafeed h5, #inputdatause h5, #inputdatamilk h5 {
@@ -920,6 +920,63 @@ margin-bottom: 35px;
 .mdl-button--primary.mdl-button--primary {
   color: var(--green);
 }
+
+#login header{
+  display: none;
+
+}
+#login{margin: 0;
+}
+#imageloginlaptop{
+  display: none;
+}
+#imageloginmobil{display: block;}
+#billedelogin img{
+  height: 100vh;
+  width: 100%;
+
+}
+ #billedelogin{
+   height: 100%;
+   width: 100%;
+ }
+#logologin{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  position: absolute;
+  top:1%;
+  left: 30%;
+
+
+
+}
+#tekstlogin{
+  position: absolute;
+  top: 29%;
+  left: 17%;
+}
+#tekstlogin h3{
+  font-size: 20px;
+}
+#tekstlogin h4{
+  font-size: 40px;
+}
+#logologin img{
+
+  height: 60%;
+  width: 60%;
+}
+#loginkasse{
+position: absolute;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 
 /*Responsive*/
 /*---------------TABLET-----------------*/
@@ -1308,7 +1365,7 @@ border-radius: 30px;
 object-fit: cover;
 }
 #indtastkasse{
-  width: 50%;
+  width: 55%;
 position: absolute;
 right: 0;
   display: flex;
@@ -1343,4 +1400,48 @@ width: 92%;
 #inputdatacow,#inputdatafeed, #inputdatause, #inputdatamilk{
   display: flex;
 }
+/*-------------loginlaptop---------*/
+#imageloginlaptop{display: flex;}
+#imageloginmobil{display: none;}
+#loginkasse{
+position: absolute;
+
+width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+#logologin{
+
+  position: absolute;
+
+  left: 43%;
+
+
+}
+#logologin img{
+
+  height: 35%;
+  width: 35%;
+}
+#firebaseui-auth-container {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+
+}
+#tekstlogin{
+  position: absolute;
+  top: 40%;
+  left: 35%;
+}
+#tekstlogin h3{
+  font-size: 30px;
+}
+#tekstlogin h4{
+  font-size: 60px;
+}
+
+
 }
