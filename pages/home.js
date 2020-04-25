@@ -111,22 +111,22 @@ export default class HomePage {
   <div>
     <h4>370,86</h4>
     <p>Samlet CO2-aftryk i tons</p>
-    <p>DOWN</p>
+    <p><span class="greenspan">⭜</span></p>
   </div>
   <div id="borders">
     <h4>7830,04</h4>
     <p>Liter mælk produceret</p>
-    <p>UP</p>
+      <p><span class="redspan">⭝</span></p>
   </div>
   <div>
     <h4>5469,21</h4>
     <p>Kg foder benytter</p>
-    <p>DOWN</p>
+      <p><span class="greenspan">⭜</span></p>
   </div>
   <div id="fulllength">
       <h4>303</h4>
       <p>Gennemsnitligt liter mælk pr. ko i liter</p>
-      <p>UP</p>
+      <p><span class="greenspan">⭜</span></p>
   </div>
 </div>
 </article>
