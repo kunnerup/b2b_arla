@@ -90,6 +90,11 @@ class AuthService {
         <h2>${this.authUser.displayName}</h2>
         <p>${this.authUser.farm}</p>
         `;
+
+        document.querySelector('#profilechallenge').innerHTML = `
+    <img id="pb" src="${this.authUser.img}" alt="Profilbillede">
+            <h2>${this.authUser.displayName}</h2>
+            `;
   }
 
   //Opdater brugeren starter her
