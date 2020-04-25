@@ -38,9 +38,10 @@ mindst en masse spændende udfordringer i hverdagen.</p>
 </div>
 
 <div id="allchallenge">
-<article id="challengeleft" class="hideonmobile">
+<article id="challengeleft">
   <div>
-        <div id="opret">
+        <div id="opret" class="hideonmobile">
+        <p id="close" class="hideondesktop" onclick="openCreate()">X</p>
         <h2>Opret målsætning eller udfordring</h2>
         <p>Her kan du lave en konkurrence mod en kollega eller opsætte en målsætning for dig selv.
 Løbende får du en status på, hvordan du klarer dig,
@@ -68,19 +69,12 @@ mindst en masse spændende udfordringer i hverdagen.</p>
    <option>Jyllands gennemsnit</option>
    <option>Danmarks gennemsnit</option>
  </select>
+
+<h3 id="greenb">Opret</h3>
+
 </form>
         </div>
-        <div id="challengeinputs">
-        </div>
-  </div>
-
-
-  <div>
-      <div>
-      </div>
-      <div>
-      </div>
-  </div>
+      
 </article>
 
 
