@@ -89,7 +89,7 @@ export default class DashboardPage {
 
 <p id="motivation"></p>
   <div>
-</aticle>
+</article>
 
 
 <div class="tabbarclear"></div>
@@ -102,9 +102,7 @@ export default class DashboardPage {
      let inputTal = document.getElementById("inputnumber");
        let besked = document.getElementById("motivation");
      let range = document.getElementById("slider");
-     let moneyFuture = document.getElementById("earning");
      inputTal.innerHTML = range.value + "kg";
-
 
      range.oninput = function() {
 
@@ -116,8 +114,19 @@ export default class DashboardPage {
      besked.innerHTML = "Puha, du får travlt i år. Skift dine maskiner til mindre dieselslugere. Sørg for at køerne får det rigtige at spise, og gør det så selvforsynende som muligt."
    }
    inputTal.innerHTML = this.value + "kg";
-   moneyFuture.innerHTML = "black";
  }
+ }
+
+ changingNumbers() {
+   let moneyFuture = document.getElementById("moneyFuture");
+   let range = document.getElementById("slider");
+   moneyFuture.innerHTML = (range.value * 1000) + "kg";
+   console.log(moneyFuture);
+
+   range.oninput = function() {
+    moneyFuture.innerHTML= range.value * 1000;
+    console.log(moneyFuture);
+   }
  }
 
    //APPEND CO2aftrykket
@@ -384,4 +393,4 @@ export default class DashboardPage {
    });
  }
 
- } 
+ }
