@@ -100,11 +100,11 @@ export default class DashboardPage {
 <div id="footprintberegner">
   <div id="changenumbers">
     <div>
-    <h2 id"moneyFuture">kr</h2>
+    <h2 id"moneyInFuture">10.000kr</h2>
     <p>Kan du potentielt spare om året.</p>
     </div>
     <div>
-    <h2>kr</h2>
+    <h2>960.330 kr</h2>
     <p>Kan du potentielt tjene ekstra i 2035.</p>
     </div>
 </div>
@@ -131,24 +131,12 @@ export default class DashboardPage {
    if (range.value > 0 && range.value < 25){
      besked.innerHTML = "Du har valgt et realistisk mål! Du kan prøve at ændre lidt på dit foder til køerne. Måske kan du få dem til at bøvse mindre."
    }else if (range.value > 24 && range.value < 75){
-     besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi."
+     besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi.";
    } else {
      besked.innerHTML = "Puha, du får travlt i år. Skift dine maskiner til mindre dieselslugere. Sørg for at køerne får det rigtige at spise, og gør det så selvforsynende som muligt."
    }
    inputTal.innerHTML = this.value + "kg";
  }
- }
-
- changingNumbers() {
-   let moneyFuture = document.getElementById("moneyFuture");
-   let range = document.getElementById("slider");
-   moneyFuture.innerHTML = (range.value * 1000) + "kg";
-   console.log(moneyFuture);
-
-   range.oninput = function() {
-    moneyFuture.innerHTML= range.value * 1000;
-    console.log(moneyFuture);
-   }
  }
 
    //APPEND CO2aftrykket
@@ -206,12 +194,12 @@ export default class DashboardPage {
              ticks: {
                beginAtZero: true,
                max: (Math.max(...data.dieselFootprint) + 0.13),
-               fontColor: "#e6e6e6",
+               fontColor: "white",
              }
            }],
            xAxes: [{
              ticks: {
-               fontColor: "#e6e6e6",
+               fontColor: "white",
              }
            }]
          }
