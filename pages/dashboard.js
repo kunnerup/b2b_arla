@@ -17,6 +17,8 @@ export default class DashboardPage {
      this.appendCard2(data);
      this.appendSmall2(data);
        this.appendCard3(data);
+       this.appendFootprintDetail(data);
+          this.milkFootprintDetail(data);
   }
 
   dashboard() {
@@ -26,13 +28,33 @@ export default class DashboardPage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
+
+
         <h2>Personligt dashboard</h2>
 
+
 <article id="mostimportantdash">
-    <div id="rightimpotant">
+    <div id="rightimpotant" onclick="openMoreData()">
     <h3>Dit CO2-aftryk</h3>
     <p>Pr. kg. mælk produceret</p>
     <canvas id="footprint"></canvas>
+    </div>
+
+    <div id="detailView">
+    <p onclick="openMoreData()" id="close">X</p>
+    <div><h2>Dit CO2-aftryk</h2>
+<p>Det går lidt op og ned med din mængde af CO2. Øg dig fokus en smule, og få vendt tingene inden næste måling!</p>
+
+<canvas id="footprint2"></canvas>
+    </div>
+    <div>
+    <h2>Mælkeproduktion og CO2</h2>
+<canvas id="milkFootprint"></canvas>
+
+<h2>Du klarer dig ikke dårligt, men...</h2>
+<p>.. du kan stadig gøre det endnu bedre.<br></p>
+<p>Du kan overveje at skifte nogle af de dyre maskiner ud med el-maskiner eller om-ernære køerne, så de udleder mindre methanegas.</p>
+    </div>
     </div>
 
     <div id="double">
@@ -196,6 +218,133 @@ export default class DashboardPage {
        }
      });
    }
+
+
+   //APPEND CO2aftrykket
+   appendFootprintDetail(data) {
+     // OPRET DIAGRAMMET - CHART.JS
+     let chartContainer10 = document.getElementById("footprint2");
+     let chart10 = new Chart(chartContainer10, {
+       type: 'line',
+       data: {
+         datasets: [{
+           // DATASET 1
+           data: data.dieselFootprint,
+           label: 'CO2, Diesel',
+           fill: false,
+           backgroundColor: "white",
+           pointBackgroundColor: "#137D4E",
+             borderColor: "#137D4E",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         },
+         // DATASET 2
+         {
+           data: data.elFootprint,
+           label: 'CO2, Strøm',
+           fill: false,
+           backgroundColor: "#1d52a8",
+           pointBackgroundColor: "#1d52a8",
+           borderColor: "#1d52a8",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         },
+         // DATASET 3
+         {
+           data: data.feedFootprint,
+           label: 'CO2, foder',
+           fill: false,
+           backgroundColor: "#e89a41",
+           pointBackgroundColor: "#e89a41",
+           borderColor: "#e89a41",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         }
+
+       ],
+         labels: data.years,
+       },
+       options: {
+         legend:{
+           labels: {
+             fontColor: "#137D4E",
+           }
+         },
+         scales: {
+           yAxes: [{
+             ticks: {
+               beginAtZero: true,
+               max: (Math.max(...data.dieselFootprint) + 0.13),
+               fontColor: "#137D4E",
+             }
+           }],
+           xAxes: [{
+             ticks: {
+               fontColor: "#137D4E",
+             }
+           }]
+         }
+       }
+     });
+   }
+
+
+   //APPEND CARD ONE
+   milkFootprintDetail(data) {
+     // OPRET DIAGRAMMET - CHART.JS
+     let chartContainer11 = document.getElementById("milkFootprint");
+     let chart11 = new Chart(chartContainer11, {
+       type: 'bar',
+       data: {
+         datasets: [{
+           // DATASET 1
+           data: data.milkProduction,
+           label: 'Kg mælk produceret',
+           fill: false,
+           backgroundColor: "#137D4E",
+           pointBackgroundColor: "#137D4E",
+             borderColor: "#137D4E",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#137D4E"
+         },
+         // DATASET 2
+         {
+           data: data.totalMethane,
+           label: 'CO2 udledning fra methangas',
+           fill: false,
+           backgroundColor: "#1d52a8",
+           pointBackgroundColor: "#1d52a8",
+           borderColor: "#1d52a8",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         }
+
+       ],
+         labels: data.years,
+       },
+       options: {
+         legend:{
+           labels: {
+             fontColor: "#137D4E",
+           }          ,
+           scales: {
+             yAxes: [{
+               ticks: {
+                 fontColor: "#137D4E",
+                 beginAtZero: true
+               }
+             }],
+             xAxes: [{
+               ticks: {
+                 fontColor: "#137D4E"
+               }
+             }]
+           }
+         }
+       }
+     });
+   }
+
 
 
    //APPEND CARD ONE

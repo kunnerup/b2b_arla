@@ -54,6 +54,10 @@ window.openSetup = () => {
   document.getElementById("updateProfile").classList.toggle("show")
 }
 
+window.openMoreData = () => {
+  document.getElementById("detailView").classList.toggle("show")
+}
+
 window.openCreate = () => {
   document.getElementById("opret").classList.toggle("show");
   console.log("it works");
