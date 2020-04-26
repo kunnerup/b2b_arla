@@ -17,6 +17,7 @@ export default class HomePage {
       <img class="smalledit" src="images/navigation/setup_grey.svg" alt="setup icon" onclick="openSetup()">
       <div id="updateProfile">
             <form>
+            <p id="close" class="hideonmobile" onclick="openSetup()">X</p>
               <label for="name">Navn</label>
               <input type="text" id="name" placeholder="Indtast dit navn">
 

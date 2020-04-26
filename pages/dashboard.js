@@ -17,6 +17,8 @@ export default class DashboardPage {
      this.appendCard2(data);
      this.appendSmall2(data);
        this.appendCard3(data);
+       this.appendFootprintDetail(data);
+          this.milkFootprintDetail(data);
   }
 
   dashboard() {
@@ -26,13 +28,33 @@ export default class DashboardPage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
+
+
         <h2>Personligt dashboard</h2>
 
+
 <article id="mostimportantdash">
-    <div id="rightimpotant">
+    <div id="rightimpotant" onclick="openMoreData()">
     <h3>Dit CO2-aftryk</h3>
     <p>Pr. kg. mælk produceret</p>
     <canvas id="footprint"></canvas>
+    </div>
+
+    <div id="detailView">
+    <p onclick="openMoreData()" id="close">X</p>
+    <div><h2>Dit CO2-aftryk</h2>
+<p>Det går lidt op og ned med din mængde af CO2. Øg dig fokus en smule, og få vendt tingene inden næste måling!</p>
+
+<canvas id="footprint2"></canvas>
+    </div>
+    <div>
+    <h2>Mælkeproduktion og CO2</h2>
+<canvas id="milkFootprint"></canvas>
+
+<h2>Du klarer dig ikke dårligt, men...</h2>
+<p>.. du kan stadig gøre det endnu bedre.<br></p>
+<p>Du kan overveje at skifte nogle af de dyre maskiner ud med el-maskiner eller om-ernære køerne, så de udleder mindre methanegas.</p>
+    </div>
     </div>
 
     <div id="double">
@@ -78,12 +100,12 @@ export default class DashboardPage {
 <div id="footprintberegner">
   <div id="changenumbers">
     <div>
-    <h2 id"moneyFuture">kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
+    <h2 id"moneyInFuture">10.000kr</h2>
+    <p>Kan du potentielt spare om året.</p>
     </div>
     <div>
-    <h2>kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
+    <h2>960.330 kr</h2>
+    <p>Kan du potentielt tjene ekstra i 2035.</p>
     </div>
 </div>
 
@@ -109,24 +131,12 @@ export default class DashboardPage {
    if (range.value > 0 && range.value < 25){
      besked.innerHTML = "Du har valgt et realistisk mål! Du kan prøve at ændre lidt på dit foder til køerne. Måske kan du få dem til at bøvse mindre."
    }else if (range.value > 24 && range.value < 75){
-     besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi."
+     besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi.";
    } else {
      besked.innerHTML = "Puha, du får travlt i år. Skift dine maskiner til mindre dieselslugere. Sørg for at køerne får det rigtige at spise, og gør det så selvforsynende som muligt."
    }
    inputTal.innerHTML = this.value + "kg";
  }
- }
-
- changingNumbers() {
-   let moneyFuture = document.getElementById("moneyFuture");
-   let range = document.getElementById("slider");
-   moneyFuture.innerHTML = (range.value * 1000) + "kg";
-   console.log(moneyFuture);
-
-   range.oninput = function() {
-    moneyFuture.innerHTML= range.value * 1000;
-    console.log(moneyFuture);
-   }
  }
 
    //APPEND CO2aftrykket
@@ -184,18 +194,145 @@ export default class DashboardPage {
              ticks: {
                beginAtZero: true,
                max: (Math.max(...data.dieselFootprint) + 0.13),
-               fontColor: "#e6e6e6",
+               fontColor: "white",
              }
            }],
            xAxes: [{
              ticks: {
-               fontColor: "#e6e6e6",
+               fontColor: "white",
              }
            }]
          }
        }
      });
    }
+
+
+   //APPEND CO2aftrykket
+   appendFootprintDetail(data) {
+     // OPRET DIAGRAMMET - CHART.JS
+     let chartContainer10 = document.getElementById("footprint2");
+     let chart10 = new Chart(chartContainer10, {
+       type: 'line',
+       data: {
+         datasets: [{
+           // DATASET 1
+           data: data.dieselFootprint,
+           label: 'CO2, Diesel',
+           fill: false,
+           backgroundColor: "white",
+           pointBackgroundColor: "#137D4E",
+             borderColor: "#137D4E",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         },
+         // DATASET 2
+         {
+           data: data.elFootprint,
+           label: 'CO2, Strøm',
+           fill: false,
+           backgroundColor: "#1d52a8",
+           pointBackgroundColor: "#1d52a8",
+           borderColor: "#1d52a8",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         },
+         // DATASET 3
+         {
+           data: data.feedFootprint,
+           label: 'CO2, foder',
+           fill: false,
+           backgroundColor: "#e89a41",
+           pointBackgroundColor: "#e89a41",
+           borderColor: "#e89a41",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         }
+
+       ],
+         labels: data.years,
+       },
+       options: {
+         legend:{
+           labels: {
+             fontColor: "#137D4E",
+           }
+         },
+         scales: {
+           yAxes: [{
+             ticks: {
+               beginAtZero: true,
+               max: (Math.max(...data.dieselFootprint) + 0.13),
+               fontColor: "#137D4E",
+             }
+           }],
+           xAxes: [{
+             ticks: {
+               fontColor: "#137D4E",
+             }
+           }]
+         }
+       }
+     });
+   }
+
+
+   //APPEND CARD ONE
+   milkFootprintDetail(data) {
+     // OPRET DIAGRAMMET - CHART.JS
+     let chartContainer11 = document.getElementById("milkFootprint");
+     let chart11 = new Chart(chartContainer11, {
+       type: 'bar',
+       data: {
+         datasets: [{
+           // DATASET 1
+           data: data.milkProduction,
+           label: 'Kg mælk produceret',
+           fill: false,
+           backgroundColor: "#137D4E",
+           pointBackgroundColor: "#137D4E",
+             borderColor: "#137D4E",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#137D4E"
+         },
+         // DATASET 2
+         {
+           data: data.totalMethane,
+           label: 'CO2 udledning fra methangas',
+           fill: false,
+           backgroundColor: "#1d52a8",
+           pointBackgroundColor: "#1d52a8",
+           borderColor: "#1d52a8",
+           pointHoverBackgroundColor: "#55bae7",
+           pointHoverBorderColor: "#55bae7",
+         }
+
+       ],
+         labels: data.years,
+       },
+       options: {
+         legend:{
+           labels: {
+             fontColor: "#137D4E",
+           }          ,
+           scales: {
+             yAxes: [{
+               ticks: {
+                 fontColor: "#137D4E",
+                 beginAtZero: true
+               }
+             }],
+             xAxes: [{
+               ticks: {
+                 fontColor: "#137D4E"
+               }
+             }]
+           }
+         }
+       }
+     });
+   }
+
 
 
    //APPEND CARD ONE
