@@ -101,11 +101,11 @@ export default class DashboardPage {
   <div id="changenumbers">
     <div>
     <h2 id"moneyFuture">kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
+    <p>Kan du potentielt spare om året.</p>
     </div>
     <div>
     <h2>kr</h2>
-    <p>Kan du potentielt spare om året i 2035.</p>
+    <p>Kan du potentielt tjene ekstra i 2035.</p>
     </div>
 </div>
 

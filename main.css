@@ -541,6 +541,7 @@ div#fulllength {
     -webkit-appearance: none;
   margin: auto;
     margin-top: 10px;
+    outline:none;
 }
 
 .slider::before{
@@ -566,6 +567,7 @@ div#fulllength {
 
 .slider:hover {
    filter: brightness(110%);
+   outline:none;
 }
 
 .slider input:focus {
@@ -594,7 +596,7 @@ div#fulllength {
   margin-top: 50px;
   margin-left: 50%;
   margin-right: 50%;
-  z-index: 200;
+  z-index: 99;
   font-size: 2em;
   opacity: 0.8;
   transform: translateX(-50%)
@@ -1690,7 +1692,8 @@ width: 50%;
 
 }
 /*-------------loginlaptop---------*/
-#imageloginlaptop{display: flex;}
+#imageloginlaptop{display: flex;
+margin-top: -55px;}
 #imageloginmobil{display: none;}
 #loginkasse{
 
