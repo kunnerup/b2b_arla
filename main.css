@@ -388,6 +388,17 @@ header h2 {
   font-weight: lighter;
 }
 
+#keydata .greenspan {
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: var(--darkgreen);
+}
+
+#keydata .redspan {
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+
 div#fulllength {
   border-top: var(--lightgrey) 2px solid;
   flex-grow: 3;
@@ -712,16 +723,93 @@ margin-bottom: 35px;
 }
 
 #opret.show{
-  width: 95%;
+  height: auto;
+  width: 90%;
   background-color: var(--light_background);
   display: block;
-  position: absolute;
+  margin: auto;
+  box-shadow: var(--greytext) 2px 2px 10px;
+  padding: 10px;
+  padding-top: 45px;
+}
+
+#close {
+  font-size: 20px;
+  float: right;
+  margin-right: 10px;
+  margin-top: -25px;
+}
+
+#opret form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+margin: auto;
+margin-bottom: 25px;
+margin-top: 25px;
+}
+
+#opret form input, #opret form select {
+  padding: 10px;
+  border-radius: 5px;
+margin-bottom: 25px;
+border: 0;
+}
+
+#opret form #when {
+   -webkit-appearance: none;
+     appearance: none;
+  background: white;
+}
+#when::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  background: var(--darkgreen);
+  cursor: pointer;
 }
 
 #challenge h1 {
   margin-bottom: 15px;
 }
 
+#lastcardchallenge {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+#lasttop {
+  width: 95%;
+background-color: var(--bottomgreen);
+display: flex;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+align-items: center;
+font-size: 13px;
+padding-bottom: 25px;
+}
+
+#lastbot{
+  width: 95%;
+  background: linear-gradient(to bottom, #FFFFFF, #EBE8E8);
+  margin-top: -1px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: var(--darkgreen);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 2px var(--lightgrey);
+}
+
+#lasttop .chartjs-render-monitor {
+  width: 70% !important;
+}
 
 /*DATAINDSAMLING*/
 #enterData header {
@@ -742,8 +830,6 @@ margin-bottom: 35px;
 #inputter {
   background-color: var(--light_background);
   padding-bottom: 5%;
-
-
 }
 
 #inputdatacow h5, #inputdatafeed h5, #inputdatause h5, #inputdatamilk h5 {
@@ -994,8 +1080,9 @@ position: absolute;
   display: none;
 }
 
-.smalledit, .logud {
-  top: 0;
+.smalledit {
+  top: 570px;
+  right: 270px;
 }
 
 #tabbar {
@@ -1038,15 +1125,22 @@ justify-content: center;
 }
 
 .challenge {
+  position: inherit;
   top: 50%;
   bottom: 50%;
   transform: translateY(-50%);
-  height: 90px;
-  width: 90px;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 35%;
+  left:0;
+  background-color: inherit;
+  box-shadow: inherit;
+  left: 18px;
+}
+
+.tabbar a {
+  color: white;
 }
 
 
@@ -1128,14 +1222,26 @@ border-radius: 10px;
   flex-wrap: nowrap;
 }
 
+#keydata div div p {
+  margin-top: 2px;
+}
+
 #home form {
   width: 60%;
   right: 10px;
 }
 
-.logud {
-  left: 12%;
-  font
+#logud {
+background-color: var(--bottomgreen);
+padding: 10px;
+width: 100px;
+float: right;
+border-radius: 6px;
+box-shadow: 4px 4px 10px var(--lightgrey);
+right: 2%;
+position: absolute;
+color: white;
+top: 500px;
 }
 
 
@@ -1156,7 +1262,7 @@ width: 48%;
 
 #profile {
 position: absolute;
-  width: 35%;
+  width: 48%;
  right: 0;
   margin-top: 420px;
 }
@@ -1184,12 +1290,21 @@ position: absolute;
     margin-right: 25px;
 }
 
+#borderss{
+    border-left: var(--lightgrey) 2px solid;
+  justify-content: space-between;
+}
+
 /*DASHBOARD DEKSTOP*/
 #mostimportantdash {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 
+}
+
+#keydata #onlytwo div {
+  width: 100%;
 }
 
 #rightimpotant{
@@ -1218,37 +1333,153 @@ margin-right: 1.3%;
 
 .cards{
   width: 49%;
+  margin-top: 120px;
 }
 
 #thirdcard{
   position: absolute;
   width: 30%;
   right: 2%;
-  top: 94px;
+  top:0;
 }
 
 #footprintfunction {
   position: absolute;
   right:1%;
   width: 35%;
-  top: 660px;
+  top: 600px;
 }
 
+#footprintfunction p {
+  width: 60%;
+}
+
+#footprintberegner{
+  width: 70%;
+  padding-bottom: 10px;
+}
+
+#dms {
+  display: flex;
+  width: 50%;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin-top: -95px;
+}
+
+#dms p {
+  width: 115px;
+  padding: 20px;
+  background-color: var(--greytext);
+  color: white;
+  margin-right: 45px;
+}
+
+#dms p::after {
+  content: " ";
+  height: 0;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+margin-top: -20px;
+margin-left: 40px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--greytext);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle {
+  border-radius: 34px;
+}
+
+.toggle:before {
+  border-radius: 50%;
+}
+
+#dms input:checked + .toggle {
+  background-color: var(--bottomgreen);
+}
+
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#dms input:checked + .toggle:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+#keydata img {
+  height: 35px;
+  width: 35px;
+  margin: auto;
+  margin-top: 5px;
+}
 
 /*---------CHALLENGESIDEN DESKTOP---------------*/
 #allchallenge {
   display: flex;
 }
 
-#allchallenge article {
-  width: 40% 60%;
+
+#challengeleft {
+  width: 30%;
+  margin-right: 25px;
 }
 
-#challengeright {
+ #challengeright {
     background-color: #7AABAD;
+    position: absolute;
     top: 0;
     right:0;
-    height: 100%;
+    bottom:  0;
+    height: auto;
+    width: 60%;
+    padding-top: 25px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#headlineactive {
+  width: 50%;
+  position: absolute;
+  height: 30px;
+  top:70px;
 }
 
 #flexi {
@@ -1256,26 +1487,31 @@ margin-right: 1.3%;
     justify-content: center;
     width: 90%;
     margin: auto;
+    margin-top: 100px;
 }
 
 #rightinright {
-  width: 95%;
+  width: 100%;
   border-top-right-radius: 0;
   border-bottom-left-radius: 10px;
   height: 100%;
   margin-right: -1px;
 }
 
+#whiteelementactive{
+  width: 50%;
+}
+
 #flexboxen {
-  width: 98%;
+  width: 100%;
   margin-top: 0;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   margin-left: -1px;
   padding: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
-
-
 
    /*-------------Indtast data DESKTOP---------*/
    #cowQuest, #feedQuest, #useQuest, #milkQuest {

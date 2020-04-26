@@ -8,6 +8,9 @@ export default class ChallengePage {
 
   async init() {
     // stadig farm1 som den "indloggede bruger"
+    let uiden = "farm1";
+    let dataFarm = await sustainabilityDataService.getPreparedDataByUid(uiden);
+
     let uid = "farm1_2";
     let data = await sustainabilityDataService.getPreparedDataByUid(uid);
 
@@ -18,6 +21,7 @@ export default class ChallengePage {
 
     // KØRER APPENDERNE
     this.appendDieselCompare(data, dataCompare);
+    this.appendCarbon(dataFarm);
   }
 
   challenge() {
@@ -27,7 +31,7 @@ export default class ChallengePage {
           <h2>Arla gården +</h2>
           <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
         </header>
-<h1>Målsætninger & udfordringer</h1>
+<h1 class="hideondesktop">Målsætninger & udfordringer</h1>
 <p class="hideondesktop" id="halvfemsw">
 Her kan du lave en konkurrence mod en kollega eller opsætte en målsætning for dig selv.
 Løbende får du en status på, hvordan du klarer dig,
@@ -38,9 +42,10 @@ mindst en masse spændende udfordringer i hverdagen.</p>
 </div>
 
 <div id="allchallenge">
-<article id="challengeleft" class="hideonmobile">
+<article id="challengeleft">
   <div>
-        <div id="opret">
+        <div id="opret" class="hideonmobile">
+        <p id="close" class="hideondesktop" onclick="openCreate()">X</p>
         <h2>Opret målsætning eller udfordring</h2>
         <p>Her kan du lave en konkurrence mod en kollega eller opsætte en målsætning for dig selv.
 Løbende får du en status på, hvordan du klarer dig,
@@ -68,26 +73,18 @@ mindst en masse spændende udfordringer i hverdagen.</p>
    <option>Jyllands gennemsnit</option>
    <option>Danmarks gennemsnit</option>
  </select>
+
+<h3 id="greenb">Opret</h3>
+
 </form>
         </div>
-        <div id="challengeinputs">
-        </div>
-  </div>
-
-
-  <div>
-      <div>
-      </div>
-      <div>
-      </div>
-  </div>
 </article>
 
 
 
 <article id="challengeright">
-<h3>Aktive målsætninger og udfordringer</h3>
 <div id="flexi">
+<h3 id="headlineactive">Aktive målsætninger og udfordringer</h3>
   <div>
     <div id="rightinright">
         <div id="profilechallenge"></div>
@@ -122,6 +119,16 @@ mindst en masse spændende udfordringer i hverdagen.</p>
 </div>
 </div>
 
+<div id="lastcardchallenge">
+<div id="lasttop">
+<h2>Sænk CO2-aftrykket med 5 tons</h2>
+<canvas id="carbon"></canvas>
+</div>
+<div id="lastbot"><p>Det går rigtig godt med denne målsætning.
+Du har faktisk sparet miljøet for det der
+svarer til 1200 flyvninger til Gran Canaria i år.<br><br>
+Det er da bestemt værd at tage med! Fortsæt det gode arbejde.</p></div>
+</div>
 
 </article>
 <div class="tabbarclear"></div>
@@ -160,6 +167,47 @@ mindst en masse spændende udfordringer i hverdagen.</p>
         ],
         labels: data.years,
       },
+    });
+  }
+
+  appendCarbon(dataFarm) {
+    let chartContainer9 = document.getElementById("carbon");
+    let chart9 = new Chart(chartContainer9, {
+      type: 'line',
+      data: {
+        datasets: [{
+            data: dataFarm.carbonFootprint,
+            label: 'Dit samlede CO2-aftyk i tons',
+              fill: false,
+            borderColor: "#DFE7E6",
+            backgroundColor: "#DFE7E6",
+            pointBackgroundColor: "#44916F",
+            pointBorderColor: "#DFE7E6",
+            pointHoverBackgroundColor: "#55bae7",
+            pointHoverBorderColor: "black",
+          }
+        ],
+        labels: dataFarm.years,
+      },
+      options: {
+        legend:{
+          labels: {
+            fontColor: "white",
+          }
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              fontColor: "#e6e6e6",
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              fontColor: "#e6e6e6",
+            }
+          }]
+        }
+      }
     });
   }
 

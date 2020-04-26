@@ -13,9 +13,8 @@ export default class HomePage {
         <h2>Arlagården +</h2>
         <a class="left" href="#" onclick="goBack()"><img src="images/navigation/back.svg" alt="back botton"></a>
       </header>
-      <p class="logud" onclick="logout()">LOG UD</p>
+      <p class="logud" onclick="logout() class="hideondesktop">LOG UD</p>
       <img class="smalledit" src="images/navigation/setup_grey.svg" alt="setup icon" onclick="openSetup()">
-
       <div id="updateProfile">
             <form>
               <label for="name">Navn</label>
@@ -49,17 +48,32 @@ export default class HomePage {
     <div>
       <h4>370,86</h4>
       <p>Samlet CO2-aftryk i tons</p>
-      <p>DOWN</p>
+      <p><span class="greenspan">⭜</span></p>
     </div>
     <div id="borders">
       <h4>7830,04</h4>
       <p>Liter mælk produceret</p>
-      <p>UP</p>
+      <p><span class="redspan">⭝</span></p>
     </div>
     <div>
       <h4>5469,21</h4>
       <p>Kg foder benytter</p>
-      <p>DOWN</p>
+      <p><span class="greenspan">⭜</span></p>
+    </div>
+  </div>
+  </article>
+
+
+  <article id="keydata" class="hideonmobile">
+  <div id="onlytwo">
+    <div>
+      <h4>Spar mest diesel inden 2022</h4>
+      <p>AKTIV UDFORDRING</p>
+    </div>
+
+    <div id="borderss">
+      <h4>Mindsk CO2 aftrykket</h4>
+      <p>AKTIV MÅLSÆTNING</p>
     </div>
   </div>
   </article>
@@ -68,40 +82,21 @@ export default class HomePage {
   <article id="keydata" class="hideonmobile">
   <div>
     <div>
-      <h4>370,86</h4>
-      <p>Samlet CO2-aftryk i tons</p>
-      <p>DOWN</p>
+      <h4>Køer</h4>
+      <img src="images/full.svg" alt="icon full">
+    </div>
+    <div id="borderss">
+    <h4>Foder</h4>
+    <img src="images/half.svg" alt="icon half">
     </div>
     <div id="borders">
-      <h4>7830,04</h4>
-      <p>Liter mælk produceret</p>
-      <p>UP</p>
+    <h4>Mælk</h4>
+    <img src="images/zero.svg" alt="icon full">
     </div>
     <div>
-      <h4>5469,21</h4>
-      <p>Kg foder benytter</p>
-      <p>DOWN</p>
+      <h4>Forbr.</h4>
+      <img src="images/zero.svg" alt="icon full">
     </div>
-  </div>
-  </article>
-
-
-  <article id="keydata" class="hideonmobile">
-  <div>
-    <div>
-      <h4>370,86</h4>
-      <p>Samlet CO2-aftryk i tons</p>
-      <p>DOWN</p>
-    </div>
-    <div id="borders">
-      <h4>7830,04</h4>
-      <p>Liter mælk produceret</p>
-      <p>UP</p>
-    </div>
-    <div>
-      <h4>5469,21</h4>
-      <p>Kg foder benytter</p>
-      <p>DOWN</p>
     </div>
   </div>
   </article>
@@ -116,22 +111,22 @@ export default class HomePage {
   <div>
     <h4>370,86</h4>
     <p>Samlet CO2-aftryk i tons</p>
-    <p>DOWN</p>
+    <p><span class="greenspan">⭜</span></p>
   </div>
   <div id="borders">
     <h4>7830,04</h4>
     <p>Liter mælk produceret</p>
-    <p>UP</p>
+      <p><span class="redspan">⭝</span></p>
   </div>
   <div>
     <h4>5469,21</h4>
     <p>Kg foder benytter</p>
-    <p>DOWN</p>
+      <p><span class="greenspan">⭜</span></p>
   </div>
   <div id="fulllength">
       <h4>303</h4>
       <p>Gennemsnitligt liter mælk pr. ko i liter</p>
-      <p>UP</p>
+      <p><span class="greenspan">⭜</span></p>
   </div>
 </div>
 </article>
@@ -191,7 +186,7 @@ export default class HomePage {
 
 <div>
 <img src="images/badgets/milkdrop.svg" alt="badgets icon">
-<h3>Sænk CO2-aftryk pr. kg mælk</h3></div>
+<h3>Sænk CO2-aftryk pr. kg mælk</h3>
 </div>
 
 </div>
@@ -200,6 +195,15 @@ export default class HomePage {
 <article id="activechallenges" class="hideondesktop">
 <h2 class="alignleft">Aktive målsætninger & udfordringer</h2>
 </article>
+<p id="logud" onclick="logout()" class="hideonmobile">LOG UD</p>
+
+<div id="dms">
+<p>Registrer relevant data med DMS</p>
+<label class="switch">
+  <input type="checkbox">
+  <span class="toggle"></span>
+</label>
+</div>
 
 <div class="tabbarclear"></div>
     </section>
