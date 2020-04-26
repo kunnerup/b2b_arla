@@ -6,7 +6,7 @@ export default class LoginPage {
   template() {
     document.getElementById('content').innerHTML +=  `
       <section id="login" class="page">
-        
+
         <!-- firebase auth container  -->
         <div id="loginkasse">
         <div id="logologin"><img src="images/logo/Arlacarbonlogo.png"></div>
@@ -16,8 +16,10 @@ export default class LoginPage {
         <div id="billedelogin"><img id="imageloginmobil" src="images/backgrounds/Arlalogincow.png">
         <img id="imageloginlaptop" src="images/backgrounds/Arlaloginlap.png"></div>
         <section id="firebaseui-auth-container"></section>
-      </section>
+
       </div>
+      </section>
+
     `;
   }
 }
