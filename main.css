@@ -591,6 +591,10 @@ div#fulllength {
   cursor: pointer;
 }
 
+#copyslider {
+  display: none;
+}
+
 #inputnumber {
   position: absolute;
   margin-top: 50px;
@@ -672,6 +676,12 @@ font-size: 0.95em;
 
 #detailView p {
   color: var(--darkgreen);
+}
+
+#detailView div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #close {
