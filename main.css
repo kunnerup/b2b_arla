@@ -1643,12 +1643,12 @@ margin-left: 40px;
 }
 #imageboks ul img{
   left: 35%;
-  margin-top: 80%;
+  margin-top: 70%;
   list-style: none;
   position: absolute;
   text-align: center;
   z-index: 4;
-width: 40%;
+width: 30%;
 height: auto;
 
 border-radius: 30px;
@@ -1737,7 +1737,7 @@ height: 100%;
 
 }
 #billedelogin img{
-  height: 100vh;
+  height: 100%;
   width: 100%;
 
 }
@@ -1770,5 +1770,5 @@ height: 100%;
 }
 
 
-log
+
 }
