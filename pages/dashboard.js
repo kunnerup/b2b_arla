@@ -115,7 +115,7 @@ export default class DashboardPage {
 
 
 <div class="tabbarclear"></div>
-
+<input id="copyslider" type="range" min="1" min="0" max="100" class="copyslider">
       </section>
     `;
   }
@@ -123,19 +123,21 @@ export default class DashboardPage {
   appendRange (){
      let inputTal = document.getElementById("inputnumber");
        let besked = document.getElementById("motivation");
+       let sliderTal = document.getElementById("copyslider");
      let range = document.getElementById("slider");
      inputTal.innerHTML = range.value + "kg";
 
      range.oninput = function() {
 
    if (range.value > 0 && range.value < 25){
-     besked.innerHTML = "Du har valgt et realistisk mål! Du kan prøve at ændre lidt på dit foder til køerne. Måske kan du få dem til at bøvse mindre."
+     besked.innerHTML = "Du har valgt et realistisk mål! Du kan prøve at ændre lidt på dit foder til køerne. Måske kan du få dem til at bøvse mindre.";
    }else if (range.value > 24 && range.value < 75){
      besked.innerHTML = "Du har valgt et mål der godt kan nåes, men som kræver arbejde! Du kan plante træer til at absorbere CO2'en. En anden god idé er at benytte dig af vind- eller solenergi.";
    } else {
      besked.innerHTML = "Puha, du får travlt i år. Skift dine maskiner til mindre dieselslugere. Sørg for at køerne får det rigtige at spise, og gør det så selvforsynende som muligt."
    }
    inputTal.innerHTML = this.value + "kg";
+   sliderTal.value = range.value;
  }
  }
 
