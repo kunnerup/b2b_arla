@@ -16,17 +16,13 @@ export default class DataPage {
 
       <div id="overboks">
       <div id="imageboks">
-        <h4>dataindsamling</h4>
+        <h4>Dataindsamling</h4>
 
         <ul>
 
-<li><div class="cowPercent"></div></li>
+<li id="hygs"><img id="cowenter" src="images/logo/Arlacarbonlogo.png"</li>
 
-<li><div class="feedPercent"></div></li>
 
-<li><div class="milkPercent"></div></li>
-
-<li><div class="usePercent"></div></li>
 
         </ul
         <div id="backgrounddata">
